@@ -50,7 +50,7 @@ class AerofInputBlock(InputBlock):
             if blockvars[prop] is None: continue
 
             if type(blockvars[prop]) == str:
-                if (( prop not in notpathvars ) and (self.name in ["Input",
+                if ((( prop not in notpathvars ) and (self.name in ["Input",
                                               "Postpro","Restart","Directories","NonlinearRomFileSystem",
                                                       "Files","NonlinearROM"])) or 
                     (prop in pathvars)):
