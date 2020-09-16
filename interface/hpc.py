@@ -5,6 +5,7 @@ machine_db = {'independence':{'ppn':12, 'scheduler':'maui',
                               'maxwall':[99.0*24.0], 'queue':['standard']},
               'kratos'      :{'ppn':16, 'scheduler':'slurm', 'maxwall':[48.0],
                               'queue':['standard']},
+              'sherlock'      :{'ppn':24, 'scheduler':'slurm', 'maxwall':[48.0], 'partition':'cfarhat'},
               'copper'      :{'ppn':32, 'scheduler':'maui',
                               'maxwall':[120.0,1.0,4.0],
                               'queue':['standard', 'debug', 'background']}}
@@ -42,6 +43,12 @@ class Hpc(object):
         ppn = None
         if self.machine is not None: ppn = machine_db[self.machine]['ppn']
         return ppn
+
+    @property
+    def partition(self):
+        partition = None 
+        if self.machine is not None: partition = machine_db[self.machine]['partition']
+        return partition 
 
     def execute_str(self, bin, infile):
         if self.nompi:

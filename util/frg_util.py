@@ -159,8 +159,9 @@ def write_top(fname, nodes, elems):
     for nodeset in nodes:
         f.write(nodeset[0]+' '+nodeset[1]+'\n')
         for k, nnum in enumerate(nodeset[2]):
-            f.write(str(nnum)+'  '+str(nodeset[3][k,0])+' '+
-                             str(nodeset[3][k,1])+' '+str(nodeset[3][k,2])+'\n')
+            # f.write(str(nnum)+'  '+str(nodeset[3][k,0])+' '+
+            #                  str(nodeset[3][k,1])+' '+str(nodeset[3][k,2])+'\n')
+            f.write("{0:d} {1:.16e} {2:.16e} {3:.16e} \n".format(nnum, nodeset[3][k,0], nodeset[3][k,1],nodeset[3][k,2])) #for more accuracy
 
     # Write elements
     for elemset in elems:
@@ -275,7 +276,8 @@ def write_vmo(fname, dat, step_num=0, with_header=True, different_size=None):
     if step_num is not None:
         f.write('  {0:d}\n'.format(step_num))
     for d in dat:
-        f.write(str(d[0])+'  '+str(d[1])+'  '+str(d[2])+'\n')
+        # f.write(str(d[0])+'  '+str(d[1])+'  '+str(d[2])+'\n')
+        f.write("{0:.16e} {1:.16e} {2:.16e}\n".format(d[0], d[1], d[2]))
     f.close()
 
 def write_vmo_abs(fname, dat,nodes_abs, step_num=0, with_header=True, different_size=None):
@@ -366,10 +368,11 @@ def flip_coord_top(fname_in, fname_out, swap=[0, 2, 1]):
     f_in.close()
     f_out.close()
 
-def displace_top_with_vmo(fname, top, vmo):
+def displace_top_with_vmo(fname, top, vmo, scale = 1.0, scale_disp = 1.0):
     nodes, elems   = read_top(top)
     disp           = read_vmo(vmo)
-    nodes[-1][-1] += disp
+    nodes[-1][-1] += scale_disp * disp
+    nodes[-1][-1] *= scale
     # print(nodes)
     # print(elems)
     # print('DONE')
@@ -515,6 +518,18 @@ def sower_fluid_merge(res_file, msh, con, out, name, from_bin=False, log=None,
     exec_str = "{0:s} -fluid -merge -con {1:s}".format(sower, con)
     exec_str = "{0:s} -mesh {1:s} -result {2:s}".format(exec_str, msh, res_file)
     exec_str = "{0:s} -name {1:s} -out {2:s}".format(exec_str, name, out)
+    if from_bin: exec_str = "{0:s} -binary".format(exec_str)
+    execute_code(exec_str, log, make_call)
+
+def sower_fluid_merge_geom(msh, con, dec, from_bin=False, log=None,
+                      make_call=True, sower=None):
+
+    # Default sower executable
+    if sower is None: sower = os.path.expandvars('$SOWER')
+
+    # Build execution string, execute
+    exec_str = "{0:s} -fluid -merge -con {1:s}".format(sower, con)
+    exec_str = "{0:s} -mesh {1:s} -dec {2:s}".format(exec_str, msh, dec)
     if from_bin: exec_str = "{0:s} -binary".format(exec_str)
     execute_code(exec_str, log, make_call)
 

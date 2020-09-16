@@ -37,7 +37,8 @@ class AerofInputBlock(InputBlock):
 
         # Keywords under Input, Postpro, Restart, .. that do NOT designate paths
         # i.e. do not place in ""
-        notpathvars=['ShapeDerivativeType', 'OptimalPressureDimensionality','NumClusters']
+        notpathvars=['ShapeDerivativeType', 'OptimalPressureDimensionality','NumClusters', 'Postprocess']
+        pathvars = ['Output']
 
         blockvars = vars(self)
         indent = '   '
@@ -51,7 +52,8 @@ class AerofInputBlock(InputBlock):
             if type(blockvars[prop]) == str:
                 if (( prop not in notpathvars ) and (self.name in ["Input",
                                               "Postpro","Restart","Directories","NonlinearRomFileSystem",
-                                                      "Files","NonlinearROM"])):
+                                                      "Files","NonlinearROM"])) or 
+                    (prop in pathvars)):
                     tmp='"'+blockvars[prop]+'"'
                 else:
                     tmp=blockvars[prop]

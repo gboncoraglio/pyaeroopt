@@ -10,8 +10,12 @@ Optimization Interface
 #  scipy.optimize, nlopt currently supported)
 
 import numpy as np
-# import pyOpt         #not supported currently
 import scipy.optimize
+try:
+  import pyOpt
+except ImportError as error:
+  print(error.__class__.__name__ + ":" + error.message)
+
 # import pyoptsparse   # removed until it can be integrated more smoothly
 # import openopt
 # import nlopt
@@ -254,7 +258,8 @@ class Optimize(object):
             xStar, fStar = self.optimize_openopt(solver, sens, options,
                                                  callback)
         elif 'pyopt' in solver:
-            raise ValueError('pyOpt not supported in pyaeroopt34')
+            xStar, fStar = self.optimize_pyopt(solver, sens, options)
+            #raise ValueError('pyOpt not supported in pyaeroopt34')
         return (xStar, fStar)
 
     def optimize_pyoptsparse(self, solver, sens, options, callback=None):
@@ -357,6 +362,11 @@ class Optimize(object):
 
     def optimize_scipy(self, solver, sens, options, callback=None):
         """Solve the problem with scipy."""
+        if 'basinhopping' in solver:
+          self.basinhopping = True
+          solver = solver.replace("basinhopping:", "") 
+        else:
+          self.basinhopping = False
 
         # Reformat variable bounds
         bnds = [(x[0] if x[0] > self.minf else None,
@@ -500,8 +510,21 @@ class Optimize(object):
                     constrs.append({'type':'ineq',
                                     'fun': bndValFactory(k, 'up'),
                                     'jac': bndGradFactory(k, 'up')})
-
-        summ = scipy.optimize.minimize(self.objective, self.var_init,
+        if self.basinhopping:
+          scipy.optimize.basinhopping(self.objective, self.var_init,disp=True, 
+                                      minimizer_kwargs={
+                                       'method': solver.lstrip('scipy:'),
+                                       'bounds': bnds,
+                                       'jac': self.gradient,
+                                       'constraints': constrs,
+                                       'hess': self.hessian,
+                                       'hessp': self.hessian_vec,
+                                       'callback': callback,
+                                       'options': options,
+                                       'tol': 1e-6})
+ 
+        else:
+          summ = scipy.optimize.minimize(self.objective, self.var_init,
                                        method=solver.lstrip('scipy:'),
                                        bounds=bnds, jac=self.gradient,
                                        constraints=constrs, hess=self.hessian,
@@ -557,7 +580,7 @@ class Optimize(object):
                 f = f[0]
             if f >= self.inf or np.any( g >= self.inf): fail = 1
 
-            return f, g, fail
+            return f, g.tolist(), fail
 
         # pyOpt gradient
         def gradientPyopt(xIn,f,g):

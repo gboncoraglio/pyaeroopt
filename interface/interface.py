@@ -7,7 +7,7 @@ Exported Classes:
 """
 
 import os
-from pyaeroopt.util.hpc_util import execute_code
+from pyaeroopt.util.hpc_util import execute_code, batch_slurm_pbs
 
 class CodeInterface(object):
 
@@ -75,7 +75,7 @@ class CodeInterface(object):
         self.infile.write()
         os.chdir(current_dir)
 
-    def execute(self, p=None, desc_ext=None, hpc=None, make_call=True):
+    def execute(self, p=None, desc_ext=None, hpc=None, make_call=True, name="myJob"):
         """
         Check that instance of problem has not been run (if database specified),
         create input file, call executable, and add instance to database (if
@@ -101,10 +101,12 @@ class CodeInterface(object):
             else:
                 infileArray = self.infile.fname
                 logFile = self.infile.log
-
-            exec_str = hpc.execute_str(self.bin, infileArray)
-            current_dir = os.getcwd()
-            os.chdir(self.exec_dir)
-            execute_code(exec_str, logFile, make_call)
-            os.chdir(current_dir)
+            if hpc.batch:
+                batch_slurm_pbs(name, hpc, self.exec_dir, self.bin, infileArray, logFile)
+            else:
+                exec_str = hpc.execute_str(self.bin, infileArray)
+                current_dir = os.getcwd()
+                os.chdir(self.exec_dir)
+                execute_code(exec_str, logFile, make_call)
+                os.chdir(current_dir)
             if self.db is not None: self.db.add_entry(p, self.desc, self.infile)

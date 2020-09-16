@@ -7,6 +7,7 @@ from pyaeroopt.util.frg_util import sower_fluid_mesh_motion
 from pyaeroopt.util.frg_util import run_matcher
 from pyaeroopt.util.frg_util import sower_fluid_split
 from pyaeroopt.util.frg_util import sower_fluid_merge
+from pyaeroopt.util.frg_util import sower_fluid_merge_geom
 from pyaeroopt.util.frg_util import run_xp2exo, meshtools_plane
 
 class Frg(CodeInterface):
@@ -42,6 +43,7 @@ class Frg(CodeInterface):
 
         self.msh  = self.geom_pre+'.msh' if self.geom_pre is not None else None
         self.con  = self.geom_pre+'.con' if self.geom_pre is not None else None
+        self.dec  = self.geom_pre+'.dec' if self.geom_pre is not None else None
 
     def part_mesh(self, ndec, log='partmesh.log', make_call=True):
         self.dec = part_mesh(self.top, ndec, log, make_call, self.partmesh)
@@ -77,6 +79,11 @@ class Frg(CodeInterface):
     def sower_fluid_merge(self, res_file, out, name, from_bin=False,
                           log='sower.merge.log', make_call=True):
         sower_fluid_merge(res_file, self.msh, self.con, out, name, from_bin,
+                          log, make_call, self.sower)
+
+    def sower_fluid_merge_geom(self, from_bin=False,
+                          log='sower.merge.log', make_call=True):
+        sower_fluid_merge_geom(self.msh, self.con, self.dec, from_bin,
                           log, make_call, self.sower)
 
     def run_xp2exo(self, exo_out, xpost_in, log='xp2exo.log', make_call=True):
