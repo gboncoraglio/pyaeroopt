@@ -1,0 +1,72 @@
+
+***********************************************************
+ ... Linear Dynamic Problem Information ... 
+***********************************************************
+
+1. Number of Nodes                         =            456
+
+2. Number of Elements                      =           1765
+
+3. Number of Degrees of Freedom            =           2736
+         Number of Constrained Dofs        =            180
+         Number of Unconstrained Dofs      =           2556
+
+4. Number of Applied Loads                 =              0
+
+5. Number of Output Files                  =              5
+
+6. Renumbering                             =            RCM
+
+***********************************************************
+ ... Solver Information ... 
+***********************************************************
+
+1. Skyline    
+
+***********************************************************
+ ... Timing Statistics for 1 Thread  ...
+***********************************************************
+
+1. Total Read Input Files              time:        0.02816 s        4.961 Mb
+         Read Mesh                     time:        0.02816 s
+
+2. Total Preprocessing                 time:        0.00245 s        0.390 Mb
+         Process Input Data            time:        0.00139 s 
+         Connectivity                  time:        0.00012 s 
+         Renumbering                   time:        0.00032 s 
+         Create DOFs                   time:        0.00010 s 
+         Make Constrained DOFs         time:        0.00046 s 
+         Make Boundary Conditions      time:        0.00003 s 
+
+3. Total Matrix Processing             time:        0.06427 s        0.077 Mb
+         Construct Sparse Matrices     time:        0.00204 s 
+         Form Element Matrices         time:        0.04305 s
+         Assemble Element Matrices     time:        0.01918 s
+
+4. Total RHS Processing                time:      -31.57451 s        0.000 Mb
+
+5. Total Solver                        time:        0.09981 s        2.906 Mb
+         Factor Matrix                 time:        0.01535 s 
+         Solve (Forward/Backward)      time:        0.08446 s 
+
+6. Write Output Files                  time:        0.04520 s        2.071 Mb
+
+7. Fluid Communication                 time:       60.59920 s
+   Receive From Fluid                  time:       60.54193 s
+   Send To Fluid                       time:        0.05727 s
+
+
+TOTAL SIMULATION 1 (1+2+3+4+5+6)       time:      -31.33462 s       10.405 Mb
+
+TOTAL SIMULATION 2 (1+2+3+4+5+6+7)     time:       29.26458 s 
+
+***********************************************************
+ ... Solution Information ...
+***********************************************************
+
+1. Total Amount of Requested Memory        =         93.962 Mb
+
+2. Solver Amount of Requested Memory       =          2.906 Mb
+
+***********************************************************
+

@@ -1,0 +1,1573 @@
+
+  _______                              __________
+  ___    |_____ ______________         ___  ____/
+  __  /| |_  _ \__  ___/_  __ \__________  /_  
+  _  ___ |/  __/_  /    / /_/ /_/_____/_  __/    
+  /_/  |_|\___/ /_/     \____/         /_/     
+  Changeset ID: 5c3749274227+c9de380f6f97+ 1745+1744+ 
+ ... Changeset ID 0f7ca0fdcddb+     ...
+ ... AeroElasticity Flag   =  6     ...
+ ... Sensitivity Analysis with Static Analysis ...
+ ... Linear Dynamics/Quasistatics   ... 
+ ... Skyline Solver is Selected     ... 
+32 MPI CPU for 32 subdomains
+Node statistics: min=1577, max=1944, total=57173
+Edge statistics: min=9051, max=11213, total=333867
+Face statistics: min=392, max=1210, total=23396
+Elem statistics: min=6406, max=7875, total=240648
+Control volume statistics: min=3.840e-03, max=5.527e+05, total=2.668e+08
+Mesh bounding box: (Xmin,Ymin,Zmin) = (-2.634e+02 9.000e+00 -4.755e+02)
+                   (Xmax,Ymax,Zmax) = (9.519e+02 3.238e+02 5.777e+02)
+Memory for stiffness matrix (dim=3): 49.78 MB
+Memory for Jacobi preconditioner (dim=3): 3.93 MB
+Read solution 0 from 'Fdata/fluidposition.idisp'
+ ... mesh has been moved.
+Control volume statistics: min=3.840e-03, max=5.527e+05, total=2.668e+08
+Mesh bounding box: (Xmin,Ymin,Zmin) = (-2.634e+02 9.000e+00 -4.755e+02)
+                   (Xmax,Ymax,Zmax) = (9.519e+02 3.238e+02 5.777e+02)
+ ... Writing Fluid mesh positions to Fresults/Restart/DEFAULT.POS
+Wrote solution 0 to 'Fresults/Restart/DEFAULT.POS'
+[Probe] Number of probing nodes is 0
+Memory required for matvec with H2: 138.27+50.94=189.21 MB
+Memory for ILU(0) preconditioner (dim=5): 69.13 MB
+Memory for Gmres(100) solver: 220.28 MB
+Memory for stiffness matrix (dim=3): 49.78 MB
+Memory for Jacobi preconditioner (dim=3): 3.93 MB
+Memory required for matvec with H2: 138.27+50.94=189.21 MB
+Memory for ILU(0) preconditioner (dim=5): 69.13 MB
+Memory for Gmres(2000) solver: 4364.13 MB
+Memory required for matvec with dRdX: 2940.66 MB
+Memory for stiffness matrix (dim=3): 49.78 MB
+Memory for Jacobi preconditioner (dim=3): 3.93 MB
+*******************************************************
+*** Steady Aeroelastic Shape Optimization Interface ***
+*******************************************************
+Spatial residual norm = 3.008371138023e+02
+Time for one residual evaluation: 0.005201 s
+
+It     0: Res = 1.000000e+00, Cfl = 1.000000e+00, Elapsed Time = 0.00e+00 s
+Wrote solution 0 to 'Fresults/ARW2.pressure'
+Wrote solution 0 to 'Fresults/ARW2.disp'
+... It     0: Received Incr. Disp. and Vel. ==> 1.783916e+02 and 0.000000e+00 (6.407805e+04) 
+ ... Quasistatic loop               ... 
+ ... Pseudo-Step = 1  Rel. Res.1 = 1.0000e+00 ...
+... It     1: Received Incr. Disp. and Vel. ==> 2.173182e+01 and 0.000000e+00 (6.407805e+04) 
+It     1: Res = 1.000000e+00, Cfl = 1.000000e+00, Elapsed Time = 1.75e+00 s
+ ... Pseudo-Step = 2  Rel. Res.1 = 1.0655e+00 ...
+... It     2: Received Incr. Disp. and Vel. ==> 3.289261e+01 and 0.000000e+00 (6.407805e+04) 
+It     2: Res = 1.000000e+00, Cfl = 7.142857e-01, Elapsed Time = 2.17e+00 s
+ ... Pseudo-Step = 3  Rel. Res.1 = 9.3101e-01 ...
+... It     3: Received Incr. Disp. and Vel. ==> 2.656692e+01 and 0.000000e+00 (6.407805e+04) 
+It     3: Res = 9.502225e-01, Cfl = 5.102041e-01, Elapsed Time = 2.60e+00 s
+ ... Pseudo-Step = 4  Rel. Res.1 = 1.0959e+00 ...
+... It     4: Received Incr. Disp. and Vel. ==> 2.122868e+01 and 0.000000e+00 (6.407805e+04) 
+It     4: Res = 8.557644e-01, Cfl = 8.865102e-01, Elapsed Time = 3.02e+00 s
+ ... Pseudo-Step = 5  Rel. Res.1 = 1.4164e+00 ...
+... It     5: Received Incr. Disp. and Vel. ==> 8.453055e+00 and 0.000000e+00 (6.407805e+04) 
+It     5: Res = 6.828381e-01, Cfl = 1.537924e+00, Elapsed Time = 3.46e+00 s
+ ... Pseudo-Step = 6  Rel. Res.1 = 1.5464e+00 ...
+... It     6: Received Incr. Disp. and Vel. ==> 1.861070e+01 and 0.000000e+00 (6.407805e+04) 
+It     6: Res = 4.138529e-01, Cfl = 2.652488e+00, Elapsed Time = 3.93e+00 s
+ ... Pseudo-Step = 7  Rel. Res.1 = 9.0697e-01 ...
+... It     7: Received Incr. Disp. and Vel. ==> 3.729247e+01 and 0.000000e+00 (6.407805e+04) 
+It     7: Res = 1.976078e-01, Cfl = 4.401165e+00, Elapsed Time = 4.51e+00 s
+ ... Pseudo-Step = 8  Rel. Res.1 = 7.2354e-01 ...
+... It     8: Received Incr. Disp. and Vel. ==> 5.205885e+00 and 0.000000e+00 (6.407805e+04) 
+It     8: Res = 2.185333e-01, Cfl = 7.384089e+00, Elapsed Time = 5.23e+00 s
+ ... Pseudo-Step = 9  Rel. Res.1 = 1.3842e+00 ...
+... It     9: Received Incr. Disp. and Vel. ==> 4.063767e+01 and 0.000000e+00 (6.407805e+04) 
+It     9: Res = 1.564251e-01, Cfl = 9.445204e+00, Elapsed Time = 5.84e+00 s
+ ... Pseudo-Step = 10  Rel. Res.1 = 1.4964e+00 ...
+... It    10: Received Incr. Disp. and Vel. ==> 4.263218e+01 and 0.000000e+00 (6.407805e+04) 
+It    10: Res = 7.432553e-02, Cfl = 1.427522e+01, Elapsed Time = 6.49e+00 s
+ ... Pseudo-Step = 11  Rel. Res.1 = 1.6186e+00 ...
+... It    11: Received Incr. Disp. and Vel. ==> 2.098789e+01 and 0.000000e+00 (6.407805e+04) 
+It    11: Res = 4.098137e-02, Cfl = 2.403260e+01, Elapsed Time = 7.18e+00 s
+ ... Pseudo-Step = 12  Rel. Res.1 = 1.8605e+00 ...
+... It    12: Received Incr. Disp. and Vel. ==> 2.472910e+01 and 0.000000e+00 (6.407805e+04) 
+It    12: Res = 3.122702e-02, Cfl = 3.645750e+01, Elapsed Time = 8.03e+00 s
+ ... Pseudo-Step = 13  Rel. Res.1 = 2.0491e+00 ...
+... It    13: Received Incr. Disp. and Vel. ==> 5.031435e+01 and 0.000000e+00 (6.407805e+04) 
+It    13: Res = 2.136574e-02, Cfl = 5.726519e+01, Elapsed Time = 9.08e+00 s
+ ... Pseudo-Step = 14  Rel. Res.1 = 1.8926e+00 ...
+... It    14: Received Incr. Disp. and Vel. ==> 5.250959e+01 and 0.000000e+00 (6.407805e+04) 
+It    14: Res = 9.163640e-03, Cfl = 9.321437e+01, Elapsed Time = 1.03e+01 s
+ ... Pseudo-Step = 15  Rel. Res.1 = 1.4517e+00 ...
+... It    15: Received Incr. Disp. and Vel. ==> 2.983256e+01 and 0.000000e+00 (6.407805e+04) 
+It    15: Res = 4.476612e-03, Cfl = 1.685923e+02, Elapsed Time = 1.18e+01 s
+ ... Pseudo-Step = 16  Rel. Res.1 = 8.9705e-01 ...
+... It    16: Received Incr. Disp. and Vel. ==> 8.917805e+00 and 0.000000e+00 (6.407805e+04) 
+It    16: Res = 1.480536e-03, Cfl = 2.783689e+02, Elapsed Time = 1.32e+01 s
+ ... Pseudo-Step = 17  Rel. Res.1 = 4.1435e-01 ...
+... It    17: Received Incr. Disp. and Vel. ==> 5.956981e+00 and 0.000000e+00 (6.407805e+04) 
+It    17: Res = 1.825023e-04, Cfl = 6.039378e+02, Elapsed Time = 1.48e+01 s
+ ... Pseudo-Step = 18  Rel. Res.1 = 1.8498e-01 ...
+... It    18: Received Incr. Disp. and Vel. ==> 3.802558e+00 and 0.000000e+00 (6.407805e+04) 
+It    18: Res = 2.305374e-05, Cfl = 1.000000e+03, Elapsed Time = 1.61e+01 s
+ ... Pseudo-Step = 19  Rel. Res.1 = 8.9884e-02 ...
+... It    19: Received Incr. Disp. and Vel. ==> 6.262540e-01 and 0.000000e+00 (6.407805e+04) 
+It    19: Res = 1.431260e-05, Cfl = 1.000000e+03, Elapsed Time = 1.73e+01 s
+ ... Pseudo-Step = 20  Rel. Res.1 = 4.4714e-02 ...
+... It    20: Received Incr. Disp. and Vel. ==> 1.279564e+00 and 0.000000e+00 (6.407805e+04) 
+It    20: Res = 6.523161e-06, Cfl = 1.000000e+03, Elapsed Time = 1.82e+01 s
+ ... Pseudo-Step = 21  Rel. Res.1 = 2.2470e-02 ...
+... It    21: Received Incr. Disp. and Vel. ==> 9.545448e-02 and 0.000000e+00 (6.407805e+04) 
+It    21: Res = 3.346683e-06, Cfl = 1.000000e+03, Elapsed Time = 1.92e+01 s
+ ... Pseudo-Step = 22  Rel. Res.1 = 1.1397e-02 ...
+... It    22: Received Incr. Disp. and Vel. ==> 4.142096e-01 and 0.000000e+00 (6.407805e+04) 
+It    22: Res = 4.927933e-06, Cfl = 4.744153e+02, Elapsed Time = 2.01e+01 s
+ ... Pseudo-Step = 23  Rel. Res.1 = 5.6418e-03 ...
+... It    23: Received Incr. Disp. and Vel. ==> 6.616776e-02 and 0.000000e+00 (6.407805e+04) 
+It    23: Res = 8.542057e-07, Cfl = 8.200878e+02, Elapsed Time = 2.11e+01 s
+ ... Pseudo-Step = 24  Rel. Res.1 = 2.8013e-03 ...
+... It    24: Received Incr. Disp. and Vel. ==> 1.343775e-01 and 0.000000e+00 (6.407805e+04) 
+It    24: Res = 2.223778e-06, Cfl = 4.031112e+02, Elapsed Time = 2.20e+01 s
+ ... Pseudo-Step = 25  Rel. Res.1 = 1.4089e-03 ...
+... It    25: Received Incr. Disp. and Vel. ==> 5.108371e-02 and 0.000000e+00 (6.407805e+04) 
+It    25: Res = 2.502419e-07, Cfl = 6.636209e+02, Elapsed Time = 2.30e+01 s
+ ... Pseudo-Step = 26  Rel. Res.1 = 7.2051e-04 ...
+... It    26: Received Incr. Disp. and Vel. ==> 3.219484e-02 and 0.000000e+00 (6.407805e+04) 
+It    26: Res = 6.112611e-07, Cfl = 5.062541e+02, Elapsed Time = 2.40e+01 s
+ ... Pseudo-Step = 27  Rel. Res.1 = 3.6136e-04 ...
+... It    27: Received Incr. Disp. and Vel. ==> 1.786530e-02 and 0.000000e+00 (6.407805e+04) 
+It    27: Res = 9.594614e-08, Cfl = 5.302098e+02, Elapsed Time = 2.50e+01 s
+ ... Pseudo-Step = 28  Rel. Res.1 = 1.7939e-04 ...
+... It    28: Received Incr. Disp. and Vel. ==> 1.002074e-02 and 0.000000e+00 (6.407805e+04) 
+It    28: Res = 1.029526e-07, Cfl = 1.000000e+03, Elapsed Time = 2.60e+01 s
+ ... Pseudo-Step = 29  Rel. Res.1 = 9.2053e-05 ...
+... It    29: Received Incr. Disp. and Vel. ==> 8.295265e-03 and 0.000000e+00 (6.407805e+04) 
+It    29: Res = 4.042108e-08, Cfl = 6.027076e+02, Elapsed Time = 2.70e+01 s
+ ... Pseudo-Step = 30  Rel. Res.1 = 4.6213e-05 ...
+... It    30: Received Incr. Disp. and Vel. ==> 1.494035e-03 and 0.000000e+00 (6.407805e+04) 
+It    30: Res = 3.032374e-08, Cfl = 1.000000e+03, Elapsed Time = 2.75e+01 s
+ ... Pseudo-Step = 31  Rel. Res.1 = 2.4679e-05 ...
+... It    31: Received Incr. Disp. and Vel. ==> 2.711690e-03 and 0.000000e+00 (6.407805e+04) 
+It    31: Res = 2.568908e-08, Cfl = 4.540662e+02, Elapsed Time = 2.81e+01 s
+ ... Pseudo-Step = 32  Rel. Res.1 = 1.1811e-05 ...
+... It    32: Received Incr. Disp. and Vel. ==> 1.550987e-04 and 0.000000e+00 (6.407805e+04) 
+It    32: Res = 9.690127e-09, Cfl = 7.833551e+02, Elapsed Time = 2.86e+01 s
+ ... Pseudo-Step = 33  Rel. Res.1 = 6.4087e-06 ...
+... It    33: Received Incr. Disp. and Vel. ==> 9.669329e-04 and 0.000000e+00 (6.407805e+04) 
+It    33: Res = 1.404703e-08, Cfl = 3.541021e+02, Elapsed Time = 2.91e+01 s
+ ... Pseudo-Step = 34  Rel. Res.1 = 3.1054e-06 ...
+... It    34: Received Incr. Disp. and Vel. ==> 1.656421e-04 and 0.000000e+00 (6.407805e+04) 
+It    34: Res = 2.548471e-09, Cfl = 6.070758e+02, Elapsed Time = 2.96e+01 s
+ ... Pseudo-Step = 35  Rel. Res.1 = 1.7131e-06 ...
+... It    35: Received Incr. Disp. and Vel. ==> 2.595629e-04 and 0.000000e+00 (6.407805e+04) 
+It    35: Res = 6.196296e-09, Cfl = 2.932378e+02, Elapsed Time = 3.01e+01 s
+It    36: Res = 7.446918e-10, Cfl = 4.737786e+02, Elapsed Time = 3.04e+01 s
+ ... Pseudo-Step = 36  Rel. Res.1 = 8.2662e-07 ...
+ ------------------------------------------------------
+ ... Quasistatic Analysis Converged After  36 Steps ...
+ ------------------------------------------------------
+Wrote solution 1 to 'Fresults/ARW2.pressure'
+Wrote solution 1 to 'Fresults/ARW2.disp'
+Wrote solution 0 to 'Fresults/Restart/sol'
+Wrote solution 0 to 'Fresults/Restart/DEFAULT.POS'
+
+----------------------------------------------------------------------
+Elapsed Time Report (s)       :        Min        Max        Avg   # Calls
+
+Problem Setup                 :       2.57       2.59       2.58         1
+
+Fluid Solution                :      20.50      20.53      20.52         -
+  Time Steps                  :       0.08       0.11       0.10        37
+  Nodal Weights and Gradients :       0.27       0.30       0.28       164
+  FV Fluxes                   :       0.69       0.70       0.70       163
+  FE Fluxes                   :       0.00       0.00       0.00         0
+  FV Jacobian                 :       1.33       1.64       1.51        89
+  FE Jacobian                 :       0.00       0.00       0.00         0
+  VMS-LES Modeling            :       0.00       0.00       0.00         0
+  Dynamic VMS-LES Modeling    :       0.00       0.00       0.00         0
+  H2 Matrix Assembly          :       1.30       1.68       1.48        89
+  Preconditioner Setup        :       2.32       2.74       2.52        88
+  Linear Solver               :      15.18      15.47      15.26        88
+  Mesh Metrics Update         :       0.16       0.17       0.17        37
+
+Mesh Solution                 :       8.50       8.50       8.50         -
+  K Matrix Assembly           :       2.54       3.15       2.99        74
+  Preconditioner Setup        :       0.01       0.01       0.01        37
+  Linear Solver               :       6.29       6.29       6.29        37
+
+Communication/Synchronization :       4.37      12.11       7.23         -
+  Local                       :       2.07       8.57       4.22         -
+  Global                      :       2.01       4.88       2.93         -
+  RMA                         :       0.00       0.00       0.00         -
+  Inter                       :       0.01       0.12       0.08        74
+
+I/O                           :       1.13       2.39       1.70         -
+  Binary Read                 :       0.00       0.01       0.00         1
+  Binary Write                :       1.13       2.39       1.70         7
+
+Total Simulation              :      34.09      34.22      34.14         -
+----------------------------------------------------------------------
+ ****** wall clock time for sensitivity pre-computation is 1.92479
+ ... Aeroelastic Sensitivity Quasistatic loop ... 
+ ... Initial Force Norm: 2.923053e+08     ...
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 1  Rel. Res.2 = 1.0000e+00 ...
+ ... Pseudo-Step = 1  Rel. Res.2 = 1.0000e+00 ...
+Gmres(2000) iterations:
+  0 5.207450e+01 5.207450e+01 (1.000000e+00)  
+  1 1.108852e+01 5.207450e+01 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 2  Rel. Res.2 = 5.0000e-01 ...
+ ... Pseudo-Step = 2  Rel. Res.2 = 5.0000e-01 ...
+Gmres(2000) iterations:
+  0 1.755114e+01 1.872432e+01 (5.000000e-01)  
+  1 1.214519e+01 1.872432e+01 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 3  Rel. Res.2 = 2.5000e-01 ...
+ ... Pseudo-Step = 3  Rel. Res.2 = 2.5000e-01 ...
+Gmres(2000) iterations:
+  0 6.907280e+00 1.126146e+01 (2.500000e-01)  
+  1 4.640957e+00 1.126146e+01 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 4  Rel. Res.2 = 1.2500e-01 ...
+ ... Pseudo-Step = 4  Rel. Res.2 = 1.2500e-01 ...
+Gmres(2000) iterations:
+  0 5.426285e+00 5.920051e+00 (1.250000e-01)  
+  1 4.189857e+00 5.920051e+00 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 5  Rel. Res.2 = 6.2500e-02 ...
+ ... Pseudo-Step = 5  Rel. Res.2 = 6.2500e-02 ...
+Gmres(2000) iterations:
+  0 3.601773e+00 2.827215e+00 (6.250000e-02)  
+  1 2.891312e+00 2.827215e+00 
+  2 2.360311e+00 2.827215e+00 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 6  Rel. Res.2 = 3.1250e-02 ...
+ ... Pseudo-Step = 6  Rel. Res.2 = 3.1250e-02 ...
+Gmres(2000) iterations:
+  0 2.505601e+00 1.400071e+00 (3.125000e-02)  
+  1 2.117502e+00 1.400071e+00 
+  2 2.107466e+00 1.400071e+00 
+  3 2.008802e+00 1.400071e+00 
+  4 1.941574e+00 1.400071e+00 
+  5 1.907025e+00 1.400071e+00 
+  6 1.762247e+00 1.400071e+00 
+  7 1.664815e+00 1.400071e+00 
+  8 1.465568e+00 1.400071e+00 
+  9 1.321648e+00 1.400071e+00 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 7  Rel. Res.2 = 1.5625e-02 ...
+ ... Pseudo-Step = 7  Rel. Res.2 = 1.5625e-02 ...
+Gmres(2000) iterations:
+  0 3.120344e+00 6.631622e-01 (1.562500e-02)  
+  1 1.252408e+00 6.631622e-01 
+  2 1.088280e+00 6.631622e-01 
+  3 9.298438e-01 6.631622e-01 
+  4 8.420610e-01 6.631622e-01 
+  5 7.249327e-01 6.631622e-01 
+  6 6.476873e-01 6.631622e-01 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 8  Rel. Res.2 = 7.8125e-03 ...
+ ... Pseudo-Step = 8  Rel. Res.2 = 7.8125e-03 ...
+Gmres(2000) iterations:
+  0 1.817613e+00 3.214818e-01 (7.812502e-03)  
+  1 7.007493e-01 3.214818e-01 
+  2 5.616362e-01 3.214818e-01 
+  3 4.819037e-01 3.214818e-01 
+  4 4.162359e-01 3.214818e-01 
+  5 3.690064e-01 3.214818e-01 
+  6 3.301173e-01 3.214818e-01 
+  7 2.887139e-01 3.214818e-01 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 9  Rel. Res.2 = 3.9063e-03 ...
+ ... Pseudo-Step = 9  Rel. Res.2 = 3.9063e-03 ...
+Gmres(2000) iterations:
+  0 1.046346e+00 1.576701e-01 (3.906252e-03)  
+  1 3.848761e-01 1.576701e-01 
+  2 2.719894e-01 1.576701e-01 
+  3 2.438120e-01 1.576701e-01 
+  4 2.191717e-01 1.576701e-01 
+  5 2.022329e-01 1.576701e-01 
+  6 1.868352e-01 1.576701e-01 
+  7 1.716086e-01 1.576701e-01 
+  8 1.590371e-01 1.576701e-01 
+  9 1.430303e-01 1.576701e-01 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 10  Rel. Res.2 = 1.9531e-03 ...
+ ... Pseudo-Step = 10  Rel. Res.2 = 1.9531e-03 ...
+Gmres(2000) iterations:
+  0 3.900609e-01 7.836973e-02 (1.953126e-03)  
+  1 1.809806e-01 7.836973e-02 
+  2 1.396908e-01 7.836973e-02 
+  3 1.284117e-01 7.836973e-02 
+  4 1.178683e-01 7.836973e-02 
+  5 1.105465e-01 7.836973e-02 
+  6 1.050007e-01 7.836973e-02 
+  7 9.953480e-02 7.836973e-02 
+  8 9.382528e-02 7.836973e-02 
+  9 8.793858e-02 7.836973e-02 
+  10 8.023940e-02 7.836973e-02 
+  11 7.242043e-02 7.836973e-02 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 11  Rel. Res.2 = 9.7656e-04 ...
+ ... Pseudo-Step = 11  Rel. Res.2 = 9.7656e-04 ...
+Gmres(2000) iterations:
+  0 2.065351e-01 3.937855e-02 (9.765633e-04)  
+  1 7.700883e-02 3.937855e-02 
+  2 6.528898e-02 3.937855e-02 
+  3 6.018604e-02 3.937855e-02 
+  4 5.603166e-02 3.937855e-02 
+  5 5.264539e-02 3.937855e-02 
+  6 4.980416e-02 3.937855e-02 
+  7 4.697192e-02 3.937855e-02 
+  8 4.440734e-02 3.937855e-02 
+  9 4.118210e-02 3.937855e-02 
+  10 3.814093e-02 3.937855e-02 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 12  Rel. Res.2 = 4.8828e-04 ...
+ ... Pseudo-Step = 12  Rel. Res.2 = 4.8828e-04 ...
+Gmres(2000) iterations:
+  0 6.255391e-02 1.967514e-02 (4.882817e-04)  
+  1 4.084878e-02 1.967514e-02 
+  2 3.521210e-02 1.967514e-02 
+  3 3.297691e-02 1.967514e-02 
+  4 3.067802e-02 1.967514e-02 
+  5 2.882511e-02 1.967514e-02 
+  6 2.705661e-02 1.967514e-02 
+  7 2.511810e-02 1.967514e-02 
+  8 2.353383e-02 1.967514e-02 
+  9 2.170398e-02 1.967514e-02 
+  10 2.005476e-02 1.967514e-02 
+  11 1.807013e-02 1.967514e-02 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 13  Rel. Res.2 = 2.4414e-04 ...
+ ... Pseudo-Step = 13  Rel. Res.2 = 2.4414e-04 ...
+Gmres(2000) iterations:
+  0 2.852596e-02 9.839014e-03 (2.441409e-04)  
+  1 1.761077e-02 9.839014e-03 
+  2 1.580022e-02 9.839014e-03 
+  3 1.475703e-02 9.839014e-03 
+  4 1.342350e-02 9.839014e-03 
+  5 1.238239e-02 9.839014e-03 
+  6 1.127284e-02 9.839014e-03 
+  7 1.040851e-02 9.839014e-03 
+  8 9.631432e-03 9.839014e-03 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 14  Rel. Res.2 = 1.2207e-04 ...
+ ... Pseudo-Step = 14  Rel. Res.2 = 1.2207e-04 ...
+Gmres(2000) iterations:
+  0 2.227265e-02 4.921588e-03 (1.220704e-04)  
+  1 9.692954e-03 4.921588e-03 
+  2 8.776750e-03 4.921588e-03 
+  3 8.071056e-03 4.921588e-03 
+  4 7.459661e-03 4.921588e-03 
+  5 6.901842e-03 4.921588e-03 
+  6 6.274457e-03 4.921588e-03 
+  7 5.709626e-03 4.921588e-03 
+  8 5.244392e-03 4.921588e-03 
+  9 4.779346e-03 4.921588e-03 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 15  Rel. Res.2 = 6.1035e-05 ...
+ ... Pseudo-Step = 15  Rel. Res.2 = 6.1035e-05 ...
+Gmres(2000) iterations:
+  0 8.158137e-03 2.461084e-03 (6.103522e-05)  
+  1 4.647400e-03 2.461084e-03 
+  2 4.270623e-03 2.461084e-03 
+  3 3.912753e-03 2.461084e-03 
+  4 3.573750e-03 2.461084e-03 
+  5 3.324929e-03 2.461084e-03 
+  6 3.079669e-03 2.461084e-03 
+  7 2.885691e-03 2.461084e-03 
+  8 2.658815e-03 2.461084e-03 
+  9 2.459749e-03 2.461084e-03 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 16  Rel. Res.2 = 3.0518e-05 ...
+ ... Pseudo-Step = 16  Rel. Res.2 = 3.0518e-05 ...
+Gmres(2000) iterations:
+  0 3.576195e-03 1.230525e-03 (3.051761e-05)  
+  1 2.503177e-03 1.230525e-03 
+  2 2.208794e-03 1.230525e-03 
+  3 2.011821e-03 1.230525e-03 
+  4 1.842482e-03 1.230525e-03 
+  5 1.706765e-03 1.230525e-03 
+  6 1.543725e-03 1.230525e-03 
+  7 1.381194e-03 1.230525e-03 
+  8 1.257784e-03 1.230525e-03 
+  9 1.147762e-03 1.230525e-03 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 17  Rel. Res.2 = 1.5259e-05 ...
+ ... Pseudo-Step = 17  Rel. Res.2 = 1.5259e-05 ...
+Gmres(2000) iterations:
+  0 1.913166e-03 6.152615e-04 (1.525881e-05)  
+  1 1.174434e-03 6.152615e-04 
+  2 1.039481e-03 6.152615e-04 
+  3 9.728232e-04 6.152615e-04 
+  4 8.993616e-04 6.152615e-04 
+  5 8.375176e-04 6.152615e-04 
+  6 7.450084e-04 6.152615e-04 
+  7 6.748691e-04 6.152615e-04 
+  8 6.119977e-04 6.152615e-04 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 18  Rel. Res.2 = 7.6294e-06 ...
+ ... Pseudo-Step = 18  Rel. Res.2 = 7.6294e-06 ...
+Gmres(2000) iterations:
+  0 1.481251e-03 3.076398e-04 (7.629406e-06)  
+  1 6.082079e-04 3.076398e-04 
+  2 5.454934e-04 3.076398e-04 
+  3 5.026621e-04 3.076398e-04 
+  4 4.659385e-04 3.076398e-04 
+  5 4.352023e-04 3.076398e-04 
+  6 3.903956e-04 3.076398e-04 
+  7 3.567037e-04 3.076398e-04 
+  8 3.275464e-04 3.076398e-04 
+  9 2.952613e-04 3.076398e-04 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 19  Rel. Res.2 = 3.8147e-06 ...
+ ... Pseudo-Step = 19  Rel. Res.2 = 3.8147e-06 ...
+Gmres(2000) iterations:
+  0 6.340883e-04 1.538217e-04 (3.814703e-06)  
+  1 2.981625e-04 1.538217e-04 
+  2 2.690626e-04 1.538217e-04 
+  3 2.483758e-04 1.538217e-04 
+  4 2.278823e-04 1.538217e-04 
+  5 2.122916e-04 1.538217e-04 
+  6 1.964765e-04 1.538217e-04 
+  7 1.840783e-04 1.538217e-04 
+  8 1.707556e-04 1.538217e-04 
+  9 1.592106e-04 1.538217e-04 
+  10 1.424147e-04 1.538217e-04 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 20  Rel. Res.2 = 1.9074e-06 ...
+ ... Pseudo-Step = 20  Rel. Res.2 = 1.9074e-06 ...
+Gmres(2000) iterations:
+  0 2.647441e-04 7.691059e-05 (1.907352e-06)  
+  1 1.548106e-04 7.691059e-05 
+  2 1.267647e-04 7.691059e-05 
+  3 1.139298e-04 7.691059e-05 
+  4 1.023657e-04 7.691059e-05 
+  5 9.320949e-05 7.691059e-05 
+  6 8.507499e-05 7.691059e-05 
+  7 7.594358e-05 7.691059e-05 
+ ---------------------------------------------------------------------------
+ ... Aeroelastic Sensitivity Quasistatic Analysis Converged After 21 Steps ...
+ ---------------------------------------------------------------------------
+ ... Aeroelastic Sensitivity Quasistatic loop ... 
+ ... Initial Force Norm: 2.712358e+06     ...
+
+ ***** Derivatives of mesh position and state were computed! 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 1  Rel. Res.2 = 1.0000e+00 ...
+ ... Pseudo-Step = 1  Rel. Res.2 = 1.0000e+00 ...
+Gmres(2000) iterations:
+  0 4.032316e+01 6.542040e+00 (1.000000e+00)  
+  1 8.123190e+00 6.542040e+00 
+  2 4.676943e+00 6.542040e+00 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 2  Rel. Res.2 = 5.0000e-01 ...
+ ... Pseudo-Step = 2  Rel. Res.2 = 5.0000e-01 ...
+Gmres(2000) iterations:
+  0 1.008398e+01 6.291534e+00 (5.000001e-01)  
+  1 4.387325e+00 6.291534e+00 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 3  Rel. Res.2 = 2.5000e-01 ...
+ ... Pseudo-Step = 3  Rel. Res.2 = 2.5000e-01 ...
+Gmres(2000) iterations:
+  0 5.103041e+00 3.251200e+00 (2.500000e-01)  
+  1 3.744896e+00 3.251200e+00 
+  2 2.755789e+00 3.251200e+00 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 4  Rel. Res.2 = 1.2500e-01 ...
+ ... Pseudo-Step = 4  Rel. Res.2 = 1.2500e-01 ...
+Gmres(2000) iterations:
+  0 3.087862e+00 1.744023e+00 (1.250000e-01)  
+  1 2.614110e+00 1.744023e+00 
+  2 2.564035e+00 1.744023e+00 
+  3 2.407080e+00 1.744023e+00 
+  4 2.385055e+00 1.744023e+00 
+  5 2.312641e+00 1.744023e+00 
+  6 2.210866e+00 1.744023e+00 
+  7 2.058607e+00 1.744023e+00 
+  8 1.848853e+00 1.744023e+00 
+  9 1.679512e+00 1.744023e+00 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 5  Rel. Res.2 = 6.2500e-02 ...
+ ... Pseudo-Step = 5  Rel. Res.2 = 6.2500e-02 ...
+Gmres(2000) iterations:
+  0 2.381098e+00 8.537099e-01 (6.249983e-02)  
+  1 1.446099e+00 8.537099e-01 
+  2 1.351165e+00 8.537099e-01 
+  3 1.150625e+00 8.537099e-01 
+  4 1.020466e+00 8.537099e-01 
+  5 8.996563e-01 8.537099e-01 
+  6 7.873565e-01 8.537099e-01 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 6  Rel. Res.2 = 3.1250e-02 ...
+ ... Pseudo-Step = 6  Rel. Res.2 = 3.1250e-02 ...
+Gmres(2000) iterations:
+  0 1.954943e+00 4.144701e-01 (3.125002e-02)  
+  1 7.879466e-01 4.144701e-01 
+  2 6.529597e-01 4.144701e-01 
+  3 5.578316e-01 4.144701e-01 
+  4 4.746515e-01 4.144701e-01 
+  5 4.057375e-01 4.144701e-01 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 7  Rel. Res.2 = 1.5625e-02 ...
+ ... Pseudo-Step = 7  Rel. Res.2 = 1.5625e-02 ...
+Gmres(2000) iterations:
+  0 7.059594e-01 2.067045e-01 (1.562509e-02)  
+  1 3.978692e-01 2.067045e-01 
+  2 3.345841e-01 2.067045e-01 
+  3 2.955445e-01 2.067045e-01 
+  4 2.620935e-01 2.067045e-01 
+  5 2.381796e-01 2.067045e-01 
+  6 2.165993e-01 2.067045e-01 
+  7 1.947975e-01 2.067045e-01 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 8  Rel. Res.2 = 7.8125e-03 ...
+ ... Pseudo-Step = 8  Rel. Res.2 = 7.8125e-03 ...
+Gmres(2000) iterations:
+  0 7.650194e-01 1.026857e-01 (7.812542e-03)  
+  1 2.727039e-01 1.026857e-01 
+  2 1.944600e-01 1.026857e-01 
+  3 1.757873e-01 1.026857e-01 
+  4 1.601604e-01 1.026857e-01 
+  5 1.493740e-01 1.026857e-01 
+  6 1.398230e-01 1.026857e-01 
+  7 1.291979e-01 1.026857e-01 
+  8 1.188578e-01 1.026857e-01 
+  9 1.077033e-01 1.026857e-01 
+  10 9.583867e-02 1.026857e-01 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 9  Rel. Res.2 = 3.9062e-03 ...
+ ... Pseudo-Step = 9  Rel. Res.2 = 3.9062e-03 ...
+Gmres(2000) iterations:
+  0 1.326781e-01 5.139894e-02 (3.906214e-03)  
+  1 9.301815e-02 5.139894e-02 
+  2 8.229639e-02 5.139894e-02 
+  3 7.636290e-02 5.139894e-02 
+  4 7.090304e-02 5.139894e-02 
+  5 6.635720e-02 5.139894e-02 
+  6 6.201757e-02 5.139894e-02 
+  7 5.849674e-02 5.139894e-02 
+  8 5.507327e-02 5.139894e-02 
+  9 5.064102e-02 5.139894e-02 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 10  Rel. Res.2 = 1.9531e-03 ...
+ ... Pseudo-Step = 10  Rel. Res.2 = 1.9531e-03 ...
+Gmres(2000) iterations:
+  0 9.735940e-02 2.573025e-02 (1.953111e-03)  
+  1 5.061440e-02 2.573025e-02 
+  2 4.566971e-02 2.573025e-02 
+  3 4.280149e-02 2.573025e-02 
+  4 3.979718e-02 2.573025e-02 
+  5 3.729648e-02 2.573025e-02 
+  6 3.545569e-02 2.573025e-02 
+  7 3.359972e-02 2.573025e-02 
+  8 3.167169e-02 2.573025e-02 
+  9 2.912797e-02 2.573025e-02 
+  10 2.644427e-02 2.573025e-02 
+  11 2.277303e-02 2.573025e-02 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 11  Rel. Res.2 = 9.7657e-04 ...
+ ... Pseudo-Step = 11  Rel. Res.2 = 9.7657e-04 ...
+Gmres(2000) iterations:
+  0 5.007498e-02 1.286560e-02 (9.765720e-04)  
+  1 2.490693e-02 1.286560e-02 
+  2 2.018418e-02 1.286560e-02 
+  3 1.859534e-02 1.286560e-02 
+  4 1.692355e-02 1.286560e-02 
+  5 1.567349e-02 1.286560e-02 
+  6 1.427600e-02 1.286560e-02 
+  7 1.298005e-02 1.286560e-02 
+  8 1.207112e-02 1.286560e-02 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 12  Rel. Res.2 = 4.8828e-04 ...
+ ... Pseudo-Step = 12  Rel. Res.2 = 4.8828e-04 ...
+Gmres(2000) iterations:
+  0 2.650444e-02 6.435539e-03 (4.882813e-04)  
+  1 1.224566e-02 6.435539e-03 
+  2 1.110114e-02 6.435539e-03 
+  3 1.044209e-02 6.435539e-03 
+  4 9.850305e-03 6.435539e-03 
+  5 9.238506e-03 6.435539e-03 
+  6 8.377588e-03 6.435539e-03 
+  7 7.559493e-03 6.435539e-03 
+  8 6.880433e-03 6.435539e-03 
+  9 6.234889e-03 6.435539e-03 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 13  Rel. Res.2 = 2.4414e-04 ...
+ ... Pseudo-Step = 13  Rel. Res.2 = 2.4414e-04 ...
+Gmres(2000) iterations:
+  0 1.120757e-02 3.218237e-03 (2.441381e-04)  
+  1 5.974329e-03 3.218237e-03 
+  2 5.522963e-03 3.218237e-03 
+  3 5.032032e-03 3.218237e-03 
+  4 4.537687e-03 3.218237e-03 
+  5 4.183026e-03 3.218237e-03 
+  6 3.834282e-03 3.218237e-03 
+  7 3.590417e-03 3.218237e-03 
+  8 3.342450e-03 3.218237e-03 
+  9 3.088165e-03 3.218237e-03 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 14  Rel. Res.2 = 1.2207e-04 ...
+ ... Pseudo-Step = 14  Rel. Res.2 = 1.2207e-04 ...
+Gmres(2000) iterations:
+  0 4.617974e-03 1.609229e-03 (1.220703e-04)  
+  1 2.983618e-03 1.609229e-03 
+  2 2.765366e-03 1.609229e-03 
+  3 2.566424e-03 1.609229e-03 
+  4 2.363491e-03 1.609229e-03 
+  5 2.201099e-03 1.609229e-03 
+  6 2.015559e-03 1.609229e-03 
+  7 1.808521e-03 1.609229e-03 
+  8 1.637664e-03 1.609229e-03 
+  9 1.475848e-03 1.609229e-03 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 15  Rel. Res.2 = 6.1036e-05 ...
+ ... Pseudo-Step = 15  Rel. Res.2 = 6.1036e-05 ...
+Gmres(2000) iterations:
+  0 2.804143e-03 8.046237e-04 (6.103565e-05)  
+  1 1.571304e-03 8.046237e-04 
+  2 1.331702e-03 8.046237e-04 
+  3 1.222554e-03 8.046237e-04 
+  4 1.099492e-03 8.046237e-04 
+  5 1.012942e-03 8.046237e-04 
+  6 9.144573e-04 8.046237e-04 
+  7 8.391501e-04 8.046237e-04 
+  8 7.788764e-04 8.046237e-04 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 16  Rel. Res.2 = 3.0517e-05 ...
+ ... Pseudo-Step = 16  Rel. Res.2 = 3.0517e-05 ...
+Gmres(2000) iterations:
+  0 1.586444e-03 4.023171e-04 (3.051750e-05)  
+  1 7.649900e-04 4.023171e-04 
+  2 7.049929e-04 4.023171e-04 
+  3 6.615058e-04 4.023171e-04 
+  4 6.196330e-04 4.023171e-04 
+  5 5.800628e-04 4.023171e-04 
+  6 5.207609e-04 4.023171e-04 
+  7 4.641613e-04 4.023171e-04 
+  8 4.189744e-04 4.023171e-04 
+  9 3.676994e-04 4.023171e-04 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 17  Rel. Res.2 = 1.5259e-05 ...
+ ... Pseudo-Step = 17  Rel. Res.2 = 1.5259e-05 ...
+Gmres(2000) iterations:
+  0 8.917176e-04 2.011588e-04 (1.525859e-05)  
+  1 3.632777e-04 2.011588e-04 
+  2 3.238779e-04 2.011588e-04 
+  3 2.925441e-04 2.011588e-04 
+  4 2.624183e-04 2.011588e-04 
+  5 2.396866e-04 2.011588e-04 
+  6 2.158070e-04 2.011588e-04 
+  7 2.018795e-04 2.011588e-04 
+  8 1.866547e-04 2.011588e-04 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 18  Rel. Res.2 = 7.6294e-06 ...
+ ... Pseudo-Step = 18  Rel. Res.2 = 7.6294e-06 ...
+Gmres(2000) iterations:
+  0 2.705620e-04 1.005805e-04 (7.629357e-06)  
+  1 1.850915e-04 1.005805e-04 
+  2 1.735232e-04 1.005805e-04 
+  3 1.622555e-04 1.005805e-04 
+  4 1.515370e-04 1.005805e-04 
+  5 1.420377e-04 1.005805e-04 
+  6 1.286456e-04 1.005805e-04 
+  7 1.131771e-04 1.005805e-04 
+  8 1.022400e-04 1.005805e-04 
+  9 8.645520e-05 1.005805e-04 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 19  Rel. Res.2 = 3.8147e-06 ...
+ ... Pseudo-Step = 19  Rel. Res.2 = 3.8147e-06 ...
+Gmres(2000) iterations:
+  0 1.763192e-04 5.029108e-05 (3.814739e-06)  
+  1 9.325012e-05 5.029108e-05 
+  2 7.417707e-05 5.029108e-05 
+  3 6.664930e-05 5.029108e-05 
+  4 5.898497e-05 5.029108e-05 
+  5 5.304331e-05 5.029108e-05 
+  6 4.740338e-05 5.029108e-05 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 20  Rel. Res.2 = 1.9074e-06 ...
+ ... Pseudo-Step = 20  Rel. Res.2 = 1.9074e-06 ...
+Gmres(2000) iterations:
+  0 6.993592e-05 2.514554e-05 (1.907368e-06)  
+  1 4.511223e-05 2.514554e-05 
+  2 4.165731e-05 2.514554e-05 
+  3 3.933093e-05 2.514554e-05 
+  4 3.740283e-05 2.514554e-05 
+  5 3.554567e-05 2.514554e-05 
+  6 3.188389e-05 2.514554e-05 
+  7 2.736512e-05 2.514554e-05 
+  8 2.318602e-05 2.514554e-05 
+ ---------------------------------------------------------------------------
+ ... Aeroelastic Sensitivity Quasistatic Analysis Converged After 21 Steps ...
+ ---------------------------------------------------------------------------
+ ... Aeroelastic Sensitivity Quasistatic loop ... 
+ ... Initial Force Norm: 6.635624e+06     ...
+
+ ***** Derivatives of mesh position and state were computed! 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 1  Rel. Res.2 = 1.0000e+00 ...
+ ... Pseudo-Step = 1  Rel. Res.2 = 1.0000e+00 ...
+Gmres(2000) iterations:
+  0 1.830440e+01 7.268182e+00 (1.000000e+00)  
+  1 5.001900e+00 7.268182e+00 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 2  Rel. Res.2 = 5.0000e-01 ...
+ ... Pseudo-Step = 2  Rel. Res.2 = 5.0000e-01 ...
+Gmres(2000) iterations:
+  0 9.085638e+00 6.551413e+00 (5.000001e-01)  
+  1 4.310150e+00 6.551413e+00 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 3  Rel. Res.2 = 2.5000e-01 ...
+ ... Pseudo-Step = 3  Rel. Res.2 = 2.5000e-01 ...
+Gmres(2000) iterations:
+  0 4.756927e+00 3.699993e+00 (2.500001e-01)  
+  1 3.336746e+00 3.699993e+00 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 4  Rel. Res.2 = 1.2500e-01 ...
+ ... Pseudo-Step = 4  Rel. Res.2 = 1.2500e-01 ...
+Gmres(2000) iterations:
+  0 3.322171e+00 1.929639e+00 (1.250001e-01)  
+  1 2.805809e+00 1.929639e+00 
+  2 2.004964e+00 1.929639e+00 
+  3 1.550061e+00 1.929639e+00 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 5  Rel. Res.2 = 6.2500e-02 ...
+ ... Pseudo-Step = 5  Rel. Res.2 = 6.2500e-02 ...
+Gmres(2000) iterations:
+  0 2.224383e+00 9.417555e-01 (6.250000e-02)  
+  1 1.499505e+00 9.417555e-01 
+  2 1.372451e+00 9.417555e-01 
+  3 1.171915e+00 9.417555e-01 
+  4 9.674692e-01 9.417555e-01 
+  5 7.973192e-01 9.417555e-01 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 6  Rel. Res.2 = 3.1250e-02 ...
+ ... Pseudo-Step = 6  Rel. Res.2 = 3.1250e-02 ...
+Gmres(2000) iterations:
+  0 2.455743e+00 4.498897e-01 (3.124994e-02)  
+  1 8.335212e-01 4.498897e-01 
+  2 7.062756e-01 4.498897e-01 
+  3 6.383110e-01 4.498897e-01 
+  4 5.951511e-01 4.498897e-01 
+  5 5.604714e-01 4.498897e-01 
+  6 4.883337e-01 4.498897e-01 
+  7 4.153471e-01 4.498897e-01 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 7  Rel. Res.2 = 1.5625e-02 ...
+ ... Pseudo-Step = 7  Rel. Res.2 = 1.5625e-02 ...
+Gmres(2000) iterations:
+  0 4.694638e-01 2.273831e-01 (1.562500e-02)  
+  1 4.016347e-01 2.273831e-01 
+  2 3.538719e-01 2.273831e-01 
+  3 3.458147e-01 2.273831e-01 
+  4 3.190728e-01 2.273831e-01 
+  5 3.005591e-01 2.273831e-01 
+  6 2.640108e-01 2.273831e-01 
+  7 2.282047e-01 2.273831e-01 
+  8 1.891645e-01 2.273831e-01 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 8  Rel. Res.2 = 7.8125e-03 ...
+ ... Pseudo-Step = 8  Rel. Res.2 = 7.8125e-03 ...
+Gmres(2000) iterations:
+  0 4.633581e-01 1.150020e-01 (7.812534e-03)  
+  1 2.016336e-01 1.150020e-01 
+  2 1.616632e-01 1.150020e-01 
+  3 1.484847e-01 1.150020e-01 
+  4 1.354737e-01 1.150020e-01 
+  5 1.236958e-01 1.150020e-01 
+  6 1.108502e-01 1.150020e-01 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 9  Rel. Res.2 = 3.9063e-03 ...
+ ... Pseudo-Step = 9  Rel. Res.2 = 3.9063e-03 ...
+Gmres(2000) iterations:
+  0 1.433992e-01 5.752392e-02 (3.906279e-03)  
+  1 1.059558e-01 5.752392e-02 
+  2 9.483919e-02 5.752392e-02 
+  3 8.803698e-02 5.752392e-02 
+  4 7.997928e-02 5.752392e-02 
+  5 7.425601e-02 5.752392e-02 
+  6 6.645779e-02 5.752392e-02 
+  7 5.586378e-02 5.752392e-02 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 10  Rel. Res.2 = 1.9531e-03 ...
+ ... Pseudo-Step = 10  Rel. Res.2 = 1.9531e-03 ...
+Gmres(2000) iterations:
+  0 8.757956e-02 2.881194e-02 (1.953138e-03)  
+  1 5.225119e-02 2.881194e-02 
+  2 4.692305e-02 2.881194e-02 
+  3 4.355852e-02 2.881194e-02 
+  4 3.942497e-02 2.881194e-02 
+  5 3.716525e-02 2.881194e-02 
+  6 3.432415e-02 2.881194e-02 
+  7 3.238280e-02 2.881194e-02 
+  8 2.826424e-02 2.881194e-02 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 11  Rel. Res.2 = 9.7656e-04 ...
+ ... Pseudo-Step = 11  Rel. Res.2 = 9.7656e-04 ...
+Gmres(2000) iterations:
+  0 3.830802e-02 1.441423e-02 (9.765650e-04)  
+  1 2.616663e-02 1.441423e-02 
+  2 2.446454e-02 1.441423e-02 
+  3 2.270636e-02 1.441423e-02 
+  4 2.137520e-02 1.441423e-02 
+  5 1.993142e-02 1.441423e-02 
+  6 1.803560e-02 1.441423e-02 
+  7 1.662295e-02 1.441423e-02 
+  8 1.486694e-02 1.441423e-02 
+  9 1.209377e-02 1.441423e-02 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 12  Rel. Res.2 = 4.8828e-04 ...
+ ... Pseudo-Step = 12  Rel. Res.2 = 4.8828e-04 ...
+Gmres(2000) iterations:
+  0 1.652216e-02 7.206942e-03 (4.882809e-04)  
+  1 1.153525e-02 7.206942e-03 
+  2 1.003959e-02 7.206942e-03 
+  3 9.175855e-03 7.206942e-03 
+  4 8.359174e-03 7.206942e-03 
+  5 7.745952e-03 7.206942e-03 
+  6 7.150639e-03 7.206942e-03 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 13  Rel. Res.2 = 2.4414e-04 ...
+ ... Pseudo-Step = 13  Rel. Res.2 = 2.4414e-04 ...
+Gmres(2000) iterations:
+  0 9.353038e-03 3.603744e-03 (2.441406e-04)  
+  1 6.944376e-03 3.603744e-03 
+  2 6.504111e-03 3.603744e-03 
+  3 6.219926e-03 3.603744e-03 
+  4 5.949417e-03 3.603744e-03 
+  5 5.619081e-03 3.603744e-03 
+  6 5.102882e-03 3.603744e-03 
+  7 4.323295e-03 3.603744e-03 
+  8 3.632882e-03 3.603744e-03 
+  9 2.811112e-03 3.603744e-03 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 14  Rel. Res.2 = 1.2207e-04 ...
+ ... Pseudo-Step = 14  Rel. Res.2 = 1.2207e-04 ...
+Gmres(2000) iterations:
+  0 5.695424e-03 1.802082e-03 (1.220710e-04)  
+  1 2.612206e-03 1.802082e-03 
+  2 2.223957e-03 1.802082e-03 
+  3 2.003147e-03 1.802082e-03 
+  4 1.771019e-03 1.802082e-03 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 15  Rel. Res.2 = 6.1036e-05 ...
+ ... Pseudo-Step = 15  Rel. Res.2 = 6.1036e-05 ...
+Gmres(2000) iterations:
+  0 3.193013e-03 9.010940e-04 (6.103557e-05)  
+  1 1.769783e-03 9.010940e-04 
+  2 1.615762e-03 9.010940e-04 
+  3 1.513386e-03 9.010940e-04 
+  4 1.402230e-03 9.010940e-04 
+  5 1.295295e-03 9.010940e-04 
+  6 1.146467e-03 9.010940e-04 
+  7 1.041449e-03 9.010940e-04 
+  8 9.500617e-04 9.010940e-04 
+  9 8.667272e-04 9.010940e-04 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 16  Rel. Res.2 = 3.0518e-05 ...
+ ... Pseudo-Step = 16  Rel. Res.2 = 3.0518e-05 ...
+Gmres(2000) iterations:
+  0 1.683574e-03 4.505610e-04 (3.051780e-05)  
+  1 8.606049e-04 4.505610e-04 
+  2 7.862451e-04 4.505610e-04 
+  3 7.303777e-04 4.505610e-04 
+  4 6.678396e-04 4.505610e-04 
+  5 6.189747e-04 4.505610e-04 
+  6 5.672283e-04 4.505610e-04 
+  7 5.279620e-04 4.505610e-04 
+  8 4.885574e-04 4.505610e-04 
+  9 4.490624e-04 4.505610e-04 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 17  Rel. Res.2 = 1.5259e-05 ...
+ ... Pseudo-Step = 17  Rel. Res.2 = 1.5259e-05 ...
+Gmres(2000) iterations:
+  0 6.306762e-04 2.252796e-04 (1.525884e-05)  
+  1 4.452036e-04 2.252796e-04 
+  2 4.001994e-04 2.252796e-04 
+  3 3.642485e-04 2.252796e-04 
+  4 3.295322e-04 2.252796e-04 
+  5 3.016022e-04 2.252796e-04 
+  6 2.753987e-04 2.252796e-04 
+  7 2.499494e-04 2.252796e-04 
+  8 2.297688e-04 2.252796e-04 
+  9 2.093152e-04 2.252796e-04 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 18  Rel. Res.2 = 7.6294e-06 ...
+ ... Pseudo-Step = 18  Rel. Res.2 = 7.6294e-06 ...
+Gmres(2000) iterations:
+  0 3.648743e-04 1.126395e-04 (7.629411e-06)  
+  1 2.170805e-04 1.126395e-04 
+  2 1.891930e-04 1.126395e-04 
+  3 1.743865e-04 1.126395e-04 
+  4 1.604720e-04 1.126395e-04 
+  5 1.488382e-04 1.126395e-04 
+  6 1.350670e-04 1.126395e-04 
+  7 1.217046e-04 1.126395e-04 
+  8 1.114116e-04 1.126395e-04 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 19  Rel. Res.2 = 3.8147e-06 ...
+ ... Pseudo-Step = 19  Rel. Res.2 = 3.8147e-06 ...
+Gmres(2000) iterations:
+  0 2.204394e-04 5.632020e-05 (3.814722e-06)  
+  1 1.123153e-04 5.632020e-05 
+  2 1.019507e-04 5.632020e-05 
+  3 9.622440e-05 5.632020e-05 
+  4 8.960515e-05 5.632020e-05 
+  5 8.366208e-05 5.632020e-05 
+  6 7.571215e-05 5.632020e-05 
+  7 6.801490e-05 5.632020e-05 
+  8 6.140950e-05 5.632020e-05 
+  9 5.385025e-05 5.632020e-05 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 20  Rel. Res.2 = 1.9074e-06 ...
+ ... Pseudo-Step = 20  Rel. Res.2 = 1.9074e-06 ...
+Gmres(2000) iterations:
+  0 1.809127e-04 2.816032e-05 (1.907368e-06)  
+  1 5.926612e-05 2.816032e-05 
+  2 4.929413e-05 2.816032e-05 
+  3 4.425799e-05 2.816032e-05 
+  4 4.020506e-05 2.816032e-05 
+  5 3.724726e-05 2.816032e-05 
+  6 3.369152e-05 2.816032e-05 
+  7 3.148711e-05 2.816032e-05 
+  8 2.895519e-05 2.816032e-05 
+  9 2.708491e-05 2.816032e-05 
+ ---------------------------------------------------------------------------
+ ... Aeroelastic Sensitivity Quasistatic Analysis Converged After 21 Steps ...
+ ---------------------------------------------------------------------------
+ ... Aeroelastic Sensitivity Quasistatic loop ... 
+ ... Initial Force Norm: 2.530397e+05     ...
+
+ ***** Derivatives of mesh position and state were computed! 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 1  Rel. Res.2 = 1.0000e+00 ...
+ ... Pseudo-Step = 1  Rel. Res.2 = 1.0000e+00 ...
+Gmres(2000) iterations:
+  0 3.243870e+01 3.424920e+01 (1.000000e+00)  
+  1 8.405345e+00 3.424920e+01 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 2  Rel. Res.2 = 5.0000e-01 ...
+ ... Pseudo-Step = 2  Rel. Res.2 = 5.0000e-01 ...
+Gmres(2000) iterations:
+  0 1.187906e+01 1.322890e+01 (5.000008e-01)  
+  1 7.867130e+00 1.322890e+01 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 3  Rel. Res.2 = 2.5000e-01 ...
+ ... Pseudo-Step = 3  Rel. Res.2 = 2.5000e-01 ...
+Gmres(2000) iterations:
+  0 6.518417e+00 7.333690e+00 (2.500022e-01)  
+  1 4.253953e+00 7.333690e+00 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 4  Rel. Res.2 = 1.2500e-01 ...
+ ... Pseudo-Step = 4  Rel. Res.2 = 1.2500e-01 ...
+Gmres(2000) iterations:
+  0 4.603488e+00 3.947500e+00 (1.250018e-01)  
+  1 3.528990e+00 3.947500e+00 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 5  Rel. Res.2 = 6.2501e-02 ...
+ ... Pseudo-Step = 5  Rel. Res.2 = 6.2501e-02 ...
+Gmres(2000) iterations:
+  0 3.536706e+00 1.968971e+00 (6.250121e-02)  
+  1 2.716400e+00 1.968971e+00 
+  2 2.082153e+00 1.968971e+00 
+  3 1.793002e+00 1.968971e+00 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 6  Rel. Res.2 = 3.1251e-02 ...
+ ... Pseudo-Step = 6  Rel. Res.2 = 3.1251e-02 ...
+Gmres(2000) iterations:
+  0 2.262836e+00 1.005716e+00 (3.125125e-02)  
+  1 1.628622e+00 1.005716e+00 
+  2 1.562599e+00 1.005716e+00 
+  3 1.462447e+00 1.005716e+00 
+  4 1.412705e+00 1.005716e+00 
+  5 1.316366e+00 1.005716e+00 
+  6 1.233666e+00 1.005716e+00 
+  7 1.161723e+00 1.005716e+00 
+  8 1.037913e+00 1.005716e+00 
+  9 9.427185e-01 1.005716e+00 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 7  Rel. Res.2 = 1.5628e-02 ...
+ ... Pseudo-Step = 7  Rel. Res.2 = 1.5628e-02 ...
+Gmres(2000) iterations:
+  0 3.589036e+00 4.553304e-01 (1.562798e-02)  
+  1 1.085404e+00 4.553304e-01 
+  2 8.028724e-01 4.553304e-01 
+  3 6.841664e-01 4.553304e-01 
+  4 5.953841e-01 4.553304e-01 
+  5 5.208377e-01 4.553304e-01 
+  6 4.740935e-01 4.553304e-01 
+  7 4.245485e-01 4.553304e-01 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 8  Rel. Res.2 = 7.8148e-03 ...
+ ... Pseudo-Step = 8  Rel. Res.2 = 7.8148e-03 ...
+Gmres(2000) iterations:
+  0 9.003378e-01 2.240485e-01 (7.814757e-03)  
+  1 4.614622e-01 2.240485e-01 
+  2 3.868018e-01 2.240485e-01 
+  3 3.482396e-01 2.240485e-01 
+  4 3.180925e-01 2.240485e-01 
+  5 2.940271e-01 2.240485e-01 
+  6 2.639179e-01 2.240485e-01 
+  7 2.254324e-01 2.240485e-01 
+  8 1.968044e-01 2.240485e-01 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 9  Rel. Res.2 = 3.9075e-03 ...
+ ... Pseudo-Step = 9  Rel. Res.2 = 3.9075e-03 ...
+Gmres(2000) iterations:
+  0 7.199106e-01 1.100709e-01 (3.907452e-03)  
+  1 2.720837e-01 1.100709e-01 
+  2 1.945568e-01 1.100709e-01 
+  3 1.753121e-01 1.100709e-01 
+  4 1.572759e-01 1.100709e-01 
+  5 1.448586e-01 1.100709e-01 
+  6 1.330738e-01 1.100709e-01 
+  7 1.219880e-01 1.100709e-01 
+  8 1.129982e-01 1.100709e-01 
+  9 1.018047e-01 1.100709e-01 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 10  Rel. Res.2 = 1.9541e-03 ...
+ ... Pseudo-Step = 10  Rel. Res.2 = 1.9541e-03 ...
+Gmres(2000) iterations:
+  0 1.453642e-01 5.519351e-02 (1.954101e-03)  
+  1 9.798698e-02 5.519351e-02 
+  2 8.626622e-02 5.519351e-02 
+  3 7.925982e-02 5.519351e-02 
+  4 7.324800e-02 5.519351e-02 
+  5 6.825906e-02 5.519351e-02 
+  6 6.282425e-02 5.519351e-02 
+  7 5.897574e-02 5.519351e-02 
+  8 5.512063e-02 5.519351e-02 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 11  Rel. Res.2 = 9.7750e-04 ...
+ ... Pseudo-Step = 11  Rel. Res.2 = 9.7750e-04 ...
+Gmres(2000) iterations:
+  0 9.745182e-02 2.767392e-02 (9.774996e-04)  
+  1 5.482325e-02 2.767392e-02 
+  2 5.110400e-02 2.767392e-02 
+  3 4.891420e-02 2.767392e-02 
+  4 4.618458e-02 2.767392e-02 
+  5 4.372847e-02 2.767392e-02 
+  6 4.136059e-02 2.767392e-02 
+  7 3.909710e-02 2.767392e-02 
+  8 3.692890e-02 2.767392e-02 
+  9 3.352910e-02 2.767392e-02 
+  10 2.989142e-02 2.767392e-02 
+  11 2.554009e-02 2.767392e-02 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 12  Rel. Res.2 = 4.8888e-04 ...
+ ... Pseudo-Step = 12  Rel. Res.2 = 4.8888e-04 ...
+Gmres(2000) iterations:
+  0 6.411858e-02 1.381549e-02 (4.888824e-04)  
+  1 2.873569e-02 1.381549e-02 
+  2 2.264002e-02 1.381549e-02 
+  3 2.063071e-02 1.381549e-02 
+  4 1.869144e-02 1.381549e-02 
+  5 1.748419e-02 1.381549e-02 
+  6 1.614380e-02 1.381549e-02 
+  7 1.489315e-02 1.381549e-02 
+  8 1.391095e-02 1.381549e-02 
+  9 1.297101e-02 1.381549e-02 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 13  Rel. Res.2 = 2.4449e-04 ...
+ ... Pseudo-Step = 13  Rel. Res.2 = 2.4449e-04 ...
+Gmres(2000) iterations:
+  0 2.487647e-02 6.913038e-03 (2.444893e-04)  
+  1 1.279578e-02 6.913038e-03 
+  2 1.182610e-02 6.913038e-03 
+  3 1.118157e-02 6.913038e-03 
+  4 1.053703e-02 6.913038e-03 
+  5 9.818776e-03 6.913038e-03 
+  6 8.839864e-03 6.913038e-03 
+  7 8.086645e-03 6.913038e-03 
+  8 7.458180e-03 6.913038e-03 
+  9 6.771314e-03 6.913038e-03 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 14  Rel. Res.2 = 1.2222e-04 ...
+ ... Pseudo-Step = 14  Rel. Res.2 = 1.2222e-04 ...
+Gmres(2000) iterations:
+  0 9.548428e-03 3.456352e-03 (1.222217e-04)  
+  1 6.425376e-03 3.456352e-03 
+  2 5.995886e-03 3.456352e-03 
+  3 5.511206e-03 3.456352e-03 
+  4 5.024932e-03 3.456352e-03 
+  5 4.628551e-03 3.456352e-03 
+  6 4.264407e-03 3.456352e-03 
+  7 3.985092e-03 3.456352e-03 
+  8 3.722986e-03 3.456352e-03 
+  9 3.472049e-03 3.456352e-03 
+  10 3.145945e-03 3.456352e-03 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 15  Rel. Res.2 = 6.1099e-05 ...
+ ... Pseudo-Step = 15  Rel. Res.2 = 6.1099e-05 ...
+Gmres(2000) iterations:
+  0 4.170403e-03 1.727873e-03 (6.109920e-05)  
+  1 3.020809e-03 1.727873e-03 
+  2 2.774252e-03 1.727873e-03 
+  3 2.555810e-03 1.727873e-03 
+  4 2.335412e-03 1.727873e-03 
+  5 2.173283e-03 1.727873e-03 
+  6 2.010985e-03 1.727873e-03 
+  7 1.848120e-03 1.727873e-03 
+  8 1.697965e-03 1.727873e-03 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 16  Rel. Res.2 = 3.0546e-05 ...
+ ... Pseudo-Step = 16  Rel. Res.2 = 3.0546e-05 ...
+Gmres(2000) iterations:
+  0 2.234692e-03 8.638230e-04 (3.054598e-05)  
+  1 1.685991e-03 8.638230e-04 
+  2 1.512083e-03 8.638230e-04 
+  3 1.397882e-03 8.638230e-04 
+  4 1.292344e-03 8.638230e-04 
+  5 1.202122e-03 8.638230e-04 
+  6 1.100611e-03 8.638230e-04 
+  7 9.946919e-04 8.638230e-04 
+  8 9.217910e-04 8.638230e-04 
+  9 8.046178e-04 8.638230e-04 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 17  Rel. Res.2 = 1.5272e-05 ...
+ ... Pseudo-Step = 17  Rel. Res.2 = 1.5272e-05 ...
+Gmres(2000) iterations:
+  0 1.144037e-03 4.318812e-04 (1.527177e-05)  
+  1 7.794984e-04 4.318812e-04 
+  2 7.020353e-04 4.318812e-04 
+  3 6.472071e-04 4.318812e-04 
+  4 5.915580e-04 4.318812e-04 
+  5 5.446776e-04 4.318812e-04 
+  6 4.885195e-04 4.318812e-04 
+  7 4.503176e-04 4.318812e-04 
+  8 4.128352e-04 4.318812e-04 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 18  Rel. Res.2 = 7.6362e-06 ...
+ ... Pseudo-Step = 18  Rel. Res.2 = 7.6362e-06 ...
+Gmres(2000) iterations:
+  0 9.352911e-04 2.159535e-04 (7.636160e-06)  
+  1 4.151174e-04 2.159535e-04 
+  2 3.739668e-04 2.159535e-04 
+  3 3.425483e-04 2.159535e-04 
+  4 3.147885e-04 2.159535e-04 
+  5 2.919519e-04 2.159535e-04 
+  6 2.649377e-04 2.159535e-04 
+  7 2.409492e-04 2.159535e-04 
+  8 2.215412e-04 2.159535e-04 
+  9 2.017586e-04 2.159535e-04 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 19  Rel. Res.2 = 3.8186e-06 ...
+ ... Pseudo-Step = 19  Rel. Res.2 = 3.8186e-06 ...
+Gmres(2000) iterations:
+  0 2.623613e-04 1.079923e-04 (3.818626e-06)  
+  1 1.960162e-04 1.079923e-04 
+  2 1.782062e-04 1.079923e-04 
+  3 1.622794e-04 1.079923e-04 
+  4 1.462738e-04 1.079923e-04 
+  5 1.331071e-04 1.079923e-04 
+  6 1.213997e-04 1.079923e-04 
+  7 1.111765e-04 1.079923e-04 
+  8 1.026993e-04 1.079923e-04 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 20  Rel. Res.2 = 1.9097e-06 ...
+ ... Pseudo-Step = 20  Rel. Res.2 = 1.9097e-06 ...
+Gmres(2000) iterations:
+  0 1.578803e-04 5.400670e-05 (1.909691e-06)  
+  1 1.077529e-04 5.400670e-05 
+  2 9.223170e-05 5.400670e-05 
+  3 8.446017e-05 5.400670e-05 
+  4 7.787553e-05 5.400670e-05 
+  5 7.155591e-05 5.400670e-05 
+  6 6.425070e-05 5.400670e-05 
+  7 5.679215e-05 5.400670e-05 
+  8 5.148881e-05 5.400670e-05 
+ ---------------------------------------------------------------------------
+ ... Aeroelastic Sensitivity Quasistatic Analysis Converged After 21 Steps ...
+ ---------------------------------------------------------------------------
+ ... Aeroelastic Sensitivity Quasistatic loop ... 
+ ... Initial Force Norm: 6.471878e+04     ...
+
+ ***** Derivatives of mesh position and state were computed! 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 1  Rel. Res.2 = 1.0000e+00 ...
+ ... Pseudo-Step = 1  Rel. Res.2 = 1.0000e+00 ...
+Gmres(2000) iterations:
+  0 1.353989e+01 1.995230e+01 (1.000000e+00)  
+  1 3.059151e+00 1.995230e+01 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 2  Rel. Res.2 = 4.9999e-01 ...
+ ... Pseudo-Step = 2  Rel. Res.2 = 4.9999e-01 ...
+Gmres(2000) iterations:
+  0 8.799894e+00 6.728304e+00 (4.999890e-01)  
+  1 3.732814e+00 6.728304e+00 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 3  Rel. Res.2 = 2.5004e-01 ...
+ ... Pseudo-Step = 3  Rel. Res.2 = 2.5004e-01 ...
+Gmres(2000) iterations:
+  0 4.053919e+00 3.684375e+00 (2.500356e-01)  
+  1 2.505096e+00 3.684375e+00 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 4  Rel. Res.2 = 1.2503e-01 ...
+ ... Pseudo-Step = 4  Rel. Res.2 = 1.2503e-01 ...
+Gmres(2000) iterations:
+  0 2.592549e+00 1.875615e+00 (1.250304e-01)  
+  1 1.936768e+00 1.875615e+00 
+  2 1.317213e+00 1.875615e+00 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 5  Rel. Res.2 = 6.2523e-02 ...
+ ... Pseudo-Step = 5  Rel. Res.2 = 6.2523e-02 ...
+Gmres(2000) iterations:
+  0 1.360884e+00 9.739200e-01 (6.252265e-02)  
+  1 1.132334e+00 9.739200e-01 
+  2 9.671424e-01 9.739200e-01 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 6  Rel. Res.2 = 3.1262e-02 ...
+ ... Pseudo-Step = 6  Rel. Res.2 = 3.1262e-02 ...
+Gmres(2000) iterations:
+  0 1.336096e+00 5.162995e-01 (3.126212e-02)  
+  1 8.593432e-01 5.162995e-01 
+  2 8.278840e-01 5.162995e-01 
+  3 8.157710e-01 5.162995e-01 
+  4 7.965904e-01 5.162995e-01 
+  5 7.775919e-01 5.162995e-01 
+  6 7.645923e-01 5.162995e-01 
+  7 7.223778e-01 5.162995e-01 
+  8 6.733046e-01 5.162995e-01 
+  9 6.185811e-01 5.162995e-01 
+  10 5.560858e-01 5.162995e-01 
+  11 4.992348e-01 5.162995e-01 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 7  Rel. Res.2 = 1.5648e-02 ...
+ ... Pseudo-Step = 7  Rel. Res.2 = 1.5648e-02 ...
+Gmres(2000) iterations:
+  0 3.843606e+00 3.081760e-01 (1.564779e-02)  
+  1 9.274776e-01 3.081760e-01 
+  2 5.430698e-01 3.081760e-01 
+  3 4.168294e-01 3.081760e-01 
+  4 3.283842e-01 3.081760e-01 
+  5 2.771778e-01 3.081760e-01 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 8  Rel. Res.2 = 7.8095e-03 ...
+ ... Pseudo-Step = 8  Rel. Res.2 = 7.8095e-03 ...
+Gmres(2000) iterations:
+  0 3.933435e-01 1.521189e-01 (7.809537e-03)  
+  1 2.594646e-01 1.521189e-01 
+  2 2.362598e-01 1.521189e-01 
+  3 2.141895e-01 1.521189e-01 
+  4 1.911789e-01 1.521189e-01 
+  5 1.758357e-01 1.521189e-01 
+  6 1.571106e-01 1.521189e-01 
+  7 1.419843e-01 1.521189e-01 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 9  Rel. Res.2 = 3.9040e-03 ...
+ ... Pseudo-Step = 9  Rel. Res.2 = 3.9040e-03 ...
+Gmres(2000) iterations:
+  0 4.266451e-01 7.731758e-02 (3.903969e-03)  
+  1 1.717209e-01 7.731758e-02 
+  2 1.338297e-01 7.731758e-02 
+  3 1.241627e-01 7.731758e-02 
+  4 1.139106e-01 7.731758e-02 
+  5 1.059067e-01 7.731758e-02 
+  6 9.740502e-02 7.731758e-02 
+  7 8.650720e-02 7.731758e-02 
+  8 7.763606e-02 7.731758e-02 
+  9 6.736089e-02 7.731758e-02 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 10  Rel. Res.2 = 1.9518e-03 ...
+ ... Pseudo-Step = 10  Rel. Res.2 = 1.9518e-03 ...
+Gmres(2000) iterations:
+  0 2.567630e-01 3.906348e-02 (1.951801e-03)  
+  1 8.672278e-02 3.906348e-02 
+  2 6.533154e-02 3.906348e-02 
+  3 5.773642e-02 3.906348e-02 
+  4 5.082273e-02 3.906348e-02 
+  5 4.617049e-02 3.906348e-02 
+  6 4.296661e-02 3.906348e-02 
+  7 4.051271e-02 3.906348e-02 
+  8 3.845627e-02 3.906348e-02 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 11  Rel. Res.2 = 9.7731e-04 ...
+ ... Pseudo-Step = 11  Rel. Res.2 = 9.7731e-04 ...
+Gmres(2000) iterations:
+  0 9.637496e-02 1.947506e-02 (9.773110e-04)  
+  1 3.861442e-02 1.947506e-02 
+  2 3.488569e-02 1.947506e-02 
+  3 3.329041e-02 1.947506e-02 
+  4 3.182932e-02 1.947506e-02 
+  5 3.063980e-02 1.947506e-02 
+  6 2.903198e-02 1.947506e-02 
+  7 2.725481e-02 1.947506e-02 
+  8 2.498738e-02 1.947506e-02 
+  9 2.255990e-02 1.947506e-02 
+  10 2.090598e-02 1.947506e-02 
+  11 1.947014e-02 1.947506e-02 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 12  Rel. Res.2 = 4.9026e-04 ...
+ ... Pseudo-Step = 12  Rel. Res.2 = 4.9026e-04 ...
+Gmres(2000) iterations:
+  0 4.072236e-02 9.786756e-03 (4.902619e-04)  
+  1 2.040454e-02 9.786756e-03 
+  2 1.810423e-02 9.786756e-03 
+  3 1.683894e-02 9.786756e-03 
+  4 1.554409e-02 9.786756e-03 
+  5 1.461834e-02 9.786756e-03 
+  6 1.353879e-02 9.786756e-03 
+  7 1.246464e-02 9.786756e-03 
+  8 1.162286e-02 9.786756e-03 
+  9 1.082599e-02 9.786756e-03 
+  10 1.019612e-02 9.786756e-03 
+  11 9.306922e-03 9.786756e-03 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 13  Rel. Res.2 = 2.4547e-04 ...
+ ... Pseudo-Step = 13  Rel. Res.2 = 2.4547e-04 ...
+Gmres(2000) iterations:
+  0 1.022334e-02 4.899561e-03 (2.454694e-04)  
+  1 8.622479e-03 4.899561e-03 
+  2 8.146191e-03 4.899561e-03 
+  3 7.655142e-03 4.899561e-03 
+  4 6.994978e-03 4.899561e-03 
+  5 6.416690e-03 4.899561e-03 
+  6 5.817615e-03 4.899561e-03 
+  7 5.276013e-03 4.899561e-03 
+  8 4.904048e-03 4.899561e-03 
+  9 4.420132e-03 4.899561e-03 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 14  Rel. Res.2 = 1.2246e-04 ...
+ ... Pseudo-Step = 14  Rel. Res.2 = 1.2246e-04 ...
+Gmres(2000) iterations:
+  0 8.312921e-03 2.443433e-03 (1.224557e-04)  
+  1 4.400272e-03 2.443433e-03 
+  2 3.959219e-03 2.443433e-03 
+  3 3.664906e-03 2.443433e-03 
+  4 3.383623e-03 2.443433e-03 
+  5 3.102692e-03 2.443433e-03 
+  6 2.866097e-03 2.443433e-03 
+  7 2.633969e-03 2.443433e-03 
+  8 2.428505e-03 2.443433e-03 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 15  Rel. Res.2 = 6.1089e-05 ...
+ ... Pseudo-Step = 15  Rel. Res.2 = 6.1089e-05 ...
+Gmres(2000) iterations:
+  0 2.569166e-03 1.218981e-03 (6.108906e-05)  
+  1 2.291009e-03 1.218981e-03 
+  2 2.161143e-03 1.218981e-03 
+  3 2.031402e-03 1.218981e-03 
+  4 1.884710e-03 1.218981e-03 
+  5 1.727738e-03 1.218981e-03 
+  6 1.602669e-03 1.218981e-03 
+  7 1.419875e-03 1.218981e-03 
+  8 1.307240e-03 1.218981e-03 
+  9 1.131174e-03 1.218981e-03 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 16  Rel. Res.2 = 3.0493e-05 ...
+ ... Pseudo-Step = 16  Rel. Res.2 = 3.0493e-05 ...
+Gmres(2000) iterations:
+  0 2.014704e-03 6.085026e-04 (3.049269e-05)  
+  1 1.097992e-03 6.085026e-04 
+  2 9.598677e-04 6.085026e-04 
+  3 8.832273e-04 6.085026e-04 
+  4 7.944787e-04 6.085026e-04 
+  5 7.292966e-04 6.085026e-04 
+  6 6.599322e-04 6.085026e-04 
+  7 6.029666e-04 6.085026e-04 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 17  Rel. Res.2 = 1.5240e-05 ...
+ ... Pseudo-Step = 17  Rel. Res.2 = 1.5240e-05 ...
+Gmres(2000) iterations:
+  0 8.972059e-04 3.041091e-04 (1.523969e-05)  
+  1 5.682610e-04 3.041091e-04 
+  2 5.216003e-04 3.041091e-04 
+  3 4.878380e-04 3.041091e-04 
+  4 4.517981e-04 3.041091e-04 
+  5 4.210242e-04 3.041091e-04 
+  6 3.813179e-04 3.041091e-04 
+  7 3.352429e-04 3.041091e-04 
+  8 2.932425e-04 3.041091e-04 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 18  Rel. Res.2 = 7.6161e-06 ...
+ ... Pseudo-Step = 18  Rel. Res.2 = 7.6161e-06 ...
+Gmres(2000) iterations:
+  0 4.375000e-04 1.519783e-04 (7.616134e-06)  
+  1 2.747326e-04 1.519783e-04 
+  2 2.495916e-04 1.519783e-04 
+  3 2.276744e-04 1.519783e-04 
+  4 2.062398e-04 1.519783e-04 
+  5 1.863535e-04 1.519783e-04 
+  6 1.667144e-04 1.519783e-04 
+  7 1.534125e-04 1.519783e-04 
+  8 1.427244e-04 1.519783e-04 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 19  Rel. Res.2 = 3.8080e-06 ...
+ ... Pseudo-Step = 19  Rel. Res.2 = 3.8080e-06 ...
+Gmres(2000) iterations:
+  0 1.520580e-04 7.598826e-05 (3.808033e-06)  
+  1 1.349734e-04 7.598826e-05 
+  2 1.285264e-04 7.598826e-05 
+  3 1.188205e-04 7.598826e-05 
+  4 1.098414e-04 7.598826e-05 
+  5 1.000613e-04 7.598826e-05 
+  6 8.998073e-05 7.598826e-05 
+  7 8.209254e-05 7.598826e-05 
+  8 7.491922e-05 7.598826e-05 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 20  Rel. Res.2 = 1.9056e-06 ...
+ ... Pseudo-Step = 20  Rel. Res.2 = 1.9056e-06 ...
+Gmres(2000) iterations:
+  0 1.244390e-04 3.802666e-05 (1.905637e-06)  
+  1 7.412038e-05 3.802666e-05 
+  2 6.479042e-05 3.802666e-05 
+  3 5.989033e-05 3.802666e-05 
+  4 5.356283e-05 3.802666e-05 
+  5 4.843218e-05 3.802666e-05 
+  6 4.379849e-05 3.802666e-05 
+  7 4.009339e-05 3.802666e-05 
+  8 3.715068e-05 3.802666e-05 
+ ---------------------------------------------------------------------------
+ ... Aeroelastic Sensitivity Quasistatic Analysis Converged After 21 Steps ...
+ ---------------------------------------------------------------------------
+ ... Aeroelastic Sensitivity Quasistatic loop ... 
+ ... Initial Force Norm: 7.419280e+04     ...
+
+ ***** Derivatives of mesh position and state were computed! 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 1  Rel. Res.2 = 1.0000e+00 ...
+ ... Pseudo-Step = 1  Rel. Res.2 = 1.0000e+00 ...
+Gmres(2000) iterations:
+  0 1.736400e+01 3.058075e+00 (1.000000e+00)  
+  1 3.475178e+00 3.058075e+00 
+  2 1.985864e+00 3.058075e+00 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 2  Rel. Res.2 = 4.9999e-01 ...
+ ... Pseudo-Step = 2  Rel. Res.2 = 4.9999e-01 ...
+Gmres(2000) iterations:
+  0 2.419934e+00 1.972011e+00 (4.999925e-01)  
+  1 1.741010e+00 1.972011e+00 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 3  Rel. Res.2 = 2.5000e-01 ...
+ ... Pseudo-Step = 3  Rel. Res.2 = 2.5000e-01 ...
+Gmres(2000) iterations:
+  0 2.026928e+00 1.094535e+00 (2.499966e-01)  
+  1 1.453828e+00 1.094535e+00 
+  2 9.469470e-01 1.094535e+00 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 4  Rel. Res.2 = 1.2500e-01 ...
+ ... Pseudo-Step = 4  Rel. Res.2 = 1.2500e-01 ...
+Gmres(2000) iterations:
+  0 1.169713e+00 5.342876e-01 (1.250006e-01)  
+  1 9.303029e-01 5.342876e-01 
+  2 8.155107e-01 5.342876e-01 
+  3 7.653035e-01 5.342876e-01 
+  4 7.179596e-01 5.342876e-01 
+  5 6.813386e-01 5.342876e-01 
+  6 6.563893e-01 5.342876e-01 
+  7 6.052435e-01 5.342876e-01 
+  8 5.571898e-01 5.342876e-01 
+  9 4.961150e-01 5.342876e-01 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 5  Rel. Res.2 = 6.2511e-02 ...
+ ... Pseudo-Step = 5  Rel. Res.2 = 6.2511e-02 ...
+Gmres(2000) iterations:
+  0 1.920284e+00 3.469862e-01 (6.251054e-02)  
+  1 5.598189e-01 3.469862e-01 
+  2 4.130015e-01 3.469862e-01 
+  3 3.401447e-01 3.469862e-01 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 6  Rel. Res.2 = 3.1257e-02 ...
+ ... Pseudo-Step = 6  Rel. Res.2 = 3.1257e-02 ...
+Gmres(2000) iterations:
+  0 4.230267e-01 1.706951e-01 (3.125720e-02)  
+  1 3.066612e-01 1.706951e-01 
+  2 2.730946e-01 1.706951e-01 
+  3 2.460471e-01 1.706951e-01 
+  4 2.217527e-01 1.706951e-01 
+  5 2.028245e-01 1.706951e-01 
+  6 1.792990e-01 1.706951e-01 
+  7 1.529369e-01 1.706951e-01 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 7  Rel. Res.2 = 1.5632e-02 ...
+ ... Pseudo-Step = 7  Rel. Res.2 = 1.5632e-02 ...
+Gmres(2000) iterations:
+  0 4.853377e-01 9.118897e-02 (1.563196e-02)  
+  1 1.666089e-01 9.118897e-02 
+  2 1.288380e-01 9.118897e-02 
+  3 1.147566e-01 9.118897e-02 
+  4 1.019859e-01 9.118897e-02 
+  5 9.047042e-02 9.118897e-02 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 8  Rel. Res.2 = 7.8178e-03 ...
+ ... Pseudo-Step = 8  Rel. Res.2 = 7.8178e-03 ...
+Gmres(2000) iterations:
+  0 2.655338e-01 4.718192e-02 (7.817792e-03)  
+  1 1.007236e-01 4.718192e-02 
+  2 8.319310e-02 4.718192e-02 
+  3 7.769394e-02 4.718192e-02 
+  4 7.019531e-02 4.718192e-02 
+  5 6.470244e-02 4.718192e-02 
+  6 5.722548e-02 4.718192e-02 
+  7 5.007319e-02 4.718192e-02 
+  8 4.267929e-02 4.718192e-02 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 9  Rel. Res.2 = 3.9089e-03 ...
+ ... Pseudo-Step = 9  Rel. Res.2 = 3.9089e-03 ...
+Gmres(2000) iterations:
+  0 8.074543e-02 2.380649e-02 (3.908872e-03)  
+  1 4.186162e-02 2.380649e-02 
+  2 3.632784e-02 2.380649e-02 
+  3 3.340110e-02 2.380649e-02 
+  4 3.026564e-02 2.380649e-02 
+  5 2.763769e-02 2.380649e-02 
+  6 2.566935e-02 2.380649e-02 
+  7 2.401939e-02 2.380649e-02 
+  8 2.263375e-02 2.380649e-02 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 10  Rel. Res.2 = 1.9538e-03 ...
+ ... Pseudo-Step = 10  Rel. Res.2 = 1.9538e-03 ...
+Gmres(2000) iterations:
+  0 4.198006e-02 1.184433e-02 (1.953838e-03)  
+  1 2.175090e-02 1.184433e-02 
+  2 2.015427e-02 1.184433e-02 
+  3 1.913780e-02 1.184433e-02 
+  4 1.806019e-02 1.184433e-02 
+  5 1.720332e-02 1.184433e-02 
+  6 1.605006e-02 1.184433e-02 
+  7 1.484275e-02 1.184433e-02 
+  8 1.360628e-02 1.184433e-02 
+  9 1.180477e-02 1.184433e-02 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 11  Rel. Res.2 = 9.7718e-04 ...
+ ... Pseudo-Step = 11  Rel. Res.2 = 9.7718e-04 ...
+Gmres(2000) iterations:
+  0 1.538663e-02 5.933596e-03 (9.771815e-04)  
+  1 1.099828e-02 5.933596e-03 
+  2 1.026632e-02 5.933596e-03 
+  3 9.725220e-03 5.933596e-03 
+  4 9.181622e-03 5.933596e-03 
+  5 8.667161e-03 5.933596e-03 
+  6 8.144610e-03 5.933596e-03 
+  7 7.719316e-03 5.933596e-03 
+  8 7.168787e-03 5.933596e-03 
+  9 6.403858e-03 5.933596e-03 
+  10 5.802310e-03 5.933596e-03 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 12  Rel. Res.2 = 4.8889e-04 ...
+ ... Pseudo-Step = 12  Rel. Res.2 = 4.8889e-04 ...
+Gmres(2000) iterations:
+  0 1.175580e-02 2.972785e-03 (4.888940e-04)  
+  1 5.667769e-03 2.972785e-03 
+  2 5.194060e-03 2.972785e-03 
+  3 4.789401e-03 2.972785e-03 
+  4 4.398887e-03 2.972785e-03 
+  5 4.125487e-03 2.972785e-03 
+  6 3.855633e-03 2.972785e-03 
+  7 3.615181e-03 2.972785e-03 
+  8 3.392360e-03 2.972785e-03 
+  9 3.147100e-03 2.972785e-03 
+  10 2.908821e-03 2.972785e-03 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 13  Rel. Res.2 = 2.4441e-04 ...
+ ... Pseudo-Step = 13  Rel. Res.2 = 2.4441e-04 ...
+Gmres(2000) iterations:
+  0 3.734010e-03 1.485919e-03 (2.444084e-04)  
+  1 2.815002e-03 1.485919e-03 
+  2 2.559018e-03 1.485919e-03 
+  3 2.379291e-03 1.485919e-03 
+  4 2.187671e-03 1.485919e-03 
+  5 2.033301e-03 1.485919e-03 
+  6 1.883409e-03 1.485919e-03 
+  7 1.704815e-03 1.485919e-03 
+  8 1.567128e-03 1.485919e-03 
+  9 1.406997e-03 1.485919e-03 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 14  Rel. Res.2 = 1.2212e-04 ...
+ ... Pseudo-Step = 14  Rel. Res.2 = 1.2212e-04 ...
+Gmres(2000) iterations:
+  0 1.663601e-03 7.424460e-04 (1.221238e-04)  
+  1 1.340526e-03 7.424460e-04 
+  2 1.227109e-03 7.424460e-04 
+  3 1.149366e-03 7.424460e-04 
+  4 1.055547e-03 7.424460e-04 
+  5 9.662283e-04 7.424460e-04 
+  6 8.874875e-04 7.424460e-04 
+  7 8.174293e-04 7.424460e-04 
+  8 7.630269e-04 7.424460e-04 
+  9 7.042873e-04 7.424460e-04 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 15  Rel. Res.2 = 6.1058e-05 ...
+ ... Pseudo-Step = 15  Rel. Res.2 = 6.1058e-05 ...
+Gmres(2000) iterations:
+  0 1.711710e-03 3.712848e-04 (6.105793e-05)  
+  1 7.170070e-04 3.712848e-04 
+  2 6.376108e-04 3.712848e-04 
+  3 5.888753e-04 3.712848e-04 
+  4 5.468736e-04 3.712848e-04 
+  5 5.048733e-04 3.712848e-04 
+  6 4.558125e-04 3.712848e-04 
+  7 4.198670e-04 3.712848e-04 
+  8 3.877490e-04 3.712848e-04 
+  9 3.572488e-04 3.712848e-04 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 16  Rel. Res.2 = 3.0536e-05 ...
+ ... Pseudo-Step = 16  Rel. Res.2 = 3.0536e-05 ...
+Gmres(2000) iterations:
+  0 6.403139e-04 1.857011e-04 (3.053627e-05)  
+  1 3.448082e-04 1.857011e-04 
+  2 3.177147e-04 1.857011e-04 
+  3 2.921090e-04 1.857011e-04 
+  4 2.680944e-04 1.857011e-04 
+  5 2.490666e-04 1.857011e-04 
+  6 2.293863e-04 1.857011e-04 
+  7 2.124036e-04 1.857011e-04 
+  8 1.966072e-04 1.857011e-04 
+  9 1.807618e-04 1.857011e-04 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 17  Rel. Res.2 = 1.5265e-05 ...
+ ... Pseudo-Step = 17  Rel. Res.2 = 1.5265e-05 ...
+Gmres(2000) iterations:
+  0 2.260333e-04 9.283300e-05 (1.526532e-05)  
+  1 1.728344e-04 9.283300e-05 
+  2 1.566761e-04 9.283300e-05 
+  3 1.444976e-04 9.283300e-05 
+  4 1.310746e-04 9.283300e-05 
+  5 1.196483e-04 9.283300e-05 
+  6 1.070250e-04 9.283300e-05 
+  7 9.771970e-05 9.283300e-05 
+  8 9.090446e-05 9.283300e-05 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 18  Rel. Res.2 = 7.6295e-06 ...
+ ... Pseudo-Step = 18  Rel. Res.2 = 7.6295e-06 ...
+Gmres(2000) iterations:
+  0 1.314586e-04 4.639714e-05 (7.629521e-06)  
+  1 9.068247e-05 4.639714e-05 
+  2 8.207489e-05 4.639714e-05 
+  3 7.772299e-05 4.639714e-05 
+  4 7.179739e-05 4.639714e-05 
+  5 6.646304e-05 4.639714e-05 
+  6 6.037477e-05 4.639714e-05 
+  7 5.502436e-05 4.639714e-05 
+  8 5.143677e-05 4.639714e-05 
+  9 4.521390e-05 4.639714e-05 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 19  Rel. Res.2 = 3.8152e-06 ...
+ ... Pseudo-Step = 19  Rel. Res.2 = 3.8152e-06 ...
+Gmres(2000) iterations:
+  0 9.426611e-05 2.320161e-05 (3.815215e-06)  
+  1 4.454382e-05 2.320161e-05 
+  2 4.012217e-05 2.320161e-05 
+  3 3.745266e-05 2.320161e-05 
+  4 3.435510e-05 2.320161e-05 
+  5 3.153936e-05 2.320161e-05 
+  6 2.765738e-05 2.320161e-05 
+  7 2.559188e-05 2.320161e-05 
+  8 2.352793e-05 2.320161e-05 
+  9 2.133369e-05 2.320161e-05 
+fso_aeroelatic_sensitivity Iteration	 ... Pseudo-Step = 20  Rel. Res.2 = 1.9088e-06 ...
+ ... Pseudo-Step = 20  Rel. Res.2 = 1.9088e-06 ...
+Gmres(2000) iterations:
+  0 6.385871e-05 1.160828e-05 (1.908819e-06)  
+  1 2.267379e-05 1.160828e-05 
+  2 1.992481e-05 1.160828e-05 
+  3 1.818615e-05 1.160828e-05 
+  4 1.683679e-05 1.160828e-05 
+  5 1.563890e-05 1.160828e-05 
+  6 1.429472e-05 1.160828e-05 
+  7 1.324519e-05 1.160828e-05 
+  8 1.211022e-05 1.160828e-05 
+  9 1.132862e-05 1.160828e-05 
+ ---------------------------------------------------------------------------
+ ... Aeroelastic Sensitivity Quasistatic Analysis Converged After 21 Steps ...
+ ---------------------------------------------------------------------------
+ ... numThicknessGroups = 3, numShapeVars = 3
+ ****** wall clock time for sensitivity solve computation is 48.8512
+
+ --------- PROBLEM PARAMETERS ---------
+ ... # Nodes              =     456 ...
+ ... # Elements           =    1765 ...
+ ... # Unconstrained dofs =    2556 ...
+ ... # Constrained dofs   =     180 ...
+ ... Total # dofs         =    2736 ...
+ ... Gravity Load is Applied        ...
+ ... # Output Files       =       5 ...
+ --------------------------------------
+ --------------------------------------
+ ... Total Time           = 8.51e+01 s
+ ... Total Memory Used    = 1.06e+02 Mb
+ --------------------------------------
+
+ ***** Derivatives of mesh position and state were computed! 
+
+ *** FluidShapeOptimizationHandler::fsoAeroelasticHandler >> Exit (49.6336 s)
+
+ ***** fsisoSolve is done ********

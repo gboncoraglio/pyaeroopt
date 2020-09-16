@@ -1,0 +1,26 @@
+CONTROL
+"modelII"
+1
+"nodeset"
+"elemset"
+*
+INCLUDE mesh/dynam
+*
+*READMODE "output/modelI.statevct" 10
+*USE_MASS_NORMALIZED_BASIS off
+READMODE "output/svd.robdataf" 10
+*
+OUTPUT
+gdisplac "output/convert.gdisplac" 1
+stressvm "output/convert.stressvm" 1
+*
+RODC
+confil "output/modelII.gdisplac" 1
+*
+INCLUDE mesh/top
+*
+INCLUDE mesh/mat_mass
+*
+INCLUDE input/template.idisp
+*
+END

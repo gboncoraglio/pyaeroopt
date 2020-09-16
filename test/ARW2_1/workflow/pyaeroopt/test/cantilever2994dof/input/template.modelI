@@ -1,0 +1,21 @@
+CONTROL
+"modelI"
+1
+"nodeset"
+"elemset"
+*
+INCLUDE mesh/dynam
+*
+OUTPUT
+gdisplac 20 16 "output/modelI.gdisplac" 1
+gdisplac 20 16 "output/modelI.node215"  1 215
+stressvm 20 16 "output/modelI.stressvm" 1
+statevct "output/modelI.statevct" 1
+*
+INCLUDE mesh/top
+*
+INCLUDE mesh/mat_nomass
+*
+INCLUDE input/template.idisp
+*
+END

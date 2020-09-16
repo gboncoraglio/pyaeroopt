@@ -1,0 +1,33 @@
+CONTROL
+ARW2.INPUT
+1
+NodSet
+EleSet
+*
+STATIC
+sparse
+*
+RENUM
+rcm
+*
+include "AeroS-Files/nodefile"
+*
+include "AeroS-Files/topologyfile"
+*
+include "AeroS-Files/cframefile"
+*
+include "AeroS-Files/displacementfile"
+*
+include "AeroS-Files/dimassfile"
+*
+include "AeroS-Files/eframefile"
+*
+include "AeroS-Files/compositefile"
+*
+*include "AeroS-Files/materialfile.ref"
+*
+include "AeroS-Files/attributefile"
+*
+END
+*
+

@@ -1,0 +1,14 @@
+// Restart file (values are dimensional)
+
+under RestartParameters {
+  Iteration = 36;
+  Time = 3.680806e-02;
+  TimeStep1 = 1.850026e-03;
+  TimeStep2 = 1.458402e-03;
+  Residual = 2.539628e+02;
+  Energy = -3.630449e+03;
+  NewtonOutputTag = 8.400000e+01;
+  NewtonStateOutputStep = 0;
+  NewtonResidualOutputStep = 0;
+  KrylovOutputStep = 0;
+}

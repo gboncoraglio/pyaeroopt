@@ -1,0 +1,80 @@
+
+***********************************************************
+ ... Non-Linear Dynamic Problem Information ... 
+***********************************************************
+
+1. Number of Nodes                         =           1037
+
+2. Number of Elements                      =           4235
+
+3. Number of Degrees of Freedom            =           3111
+         Number of Constrained Dofs        =           1812
+         Number of Unconstrained Dofs      =           1299
+
+4. Number of Applied Loads                 =              0
+
+5. Number of Output Files                  =              4
+
+6. Renumbering                             =           None
+
+***********************************************************
+ ... Solver Information ... 
+***********************************************************
+
+1. Sparse    
+
+***********************************************************
+ ... Timing Statistics for 1 Thread  ...
+***********************************************************
+
+1. Total Read Input Files              time:        0.05276 s        1.188 Mb
+         Read Mesh                     time:        0.05276 s
+
+2. Total Preprocessing                 time:        0.05889 s       11.837 Mb
+         Process Input Data            time:        0.00136 s 
+         Connectivity                  time:        0.00021 s 
+         Renumbering                   time:        0.00097 s 
+         Create DOFs                   time:        0.00011 s 
+         Make Constrained DOFs         time:        0.00000 s 
+         Make Boundary Conditions      time:        0.00000 s 
+
+3. Total Matrix Processing             time:        0.33506 s        0.301 Mb
+         Construct Sparse Matrices     time:        0.00000 s 
+         Form Element Matrices         time:        0.17481 s
+         Assemble Element Matrices     time:        0.16025 s
+
+4. Total RHS Processing                time:        0.00001 s        0.000 Mb
+
+5. Total Solver                        time:        0.03539 s        1.470 Mb
+         Factor Matrix                 time:        0.03169 s 
+         Solve (Forward/Backward)      time:        0.00366 s 
+         Update States                 time:        0.00003 s 
+
+6. Write Output Files                  time:        0.01042 s        0.000 Mb
+
+TOTAL SIMULATION (1+2+3+4+5+6)         time:        0.49254 s       14.796 Mb
+
+***********************************************************
+ ... Solution Information ...
+***********************************************************
+
+1. Total Amount of Requested Memory        =         17.898 Mb
+
+2. Solver Amount of Requested Memory       =          1.470 Mb
+
+***********************************************************
+
+
+Iter	Dv	        Relative Dv	Residual	Relative Res
+  1    0.000000e+00	0.000000e+00	2.052685e+15	1.000000e+00
+--------------------------------------------------------------------
+  2    4.267456e+01	1.000000e+00	6.092793e+14	2.968207e-01
+  3    2.863654e+01	6.710447e-01	1.812014e+14	8.827529e-02
+  4    1.941072e+01	4.548545e-01	5.410893e+13	2.636008e-02
+  5    1.345142e+01	3.152092e-01	1.629380e+13	7.937798e-03
+  6    9.608565e+00	2.251591e-01	4.982027e+12	2.427078e-03
+  7    6.866378e+00	1.609010e-01	1.524597e+12	7.427330e-04
+  8    4.044838e+00	9.478334e-02	3.867814e+11	1.884271e-04
+  9    1.220167e+00	2.859236e-02	4.603969e+10	2.242901e-05
+ 10    1.260642e-01	2.954084e-03	9.093467e+08	4.430035e-07
+--------------------------------------------------------------------

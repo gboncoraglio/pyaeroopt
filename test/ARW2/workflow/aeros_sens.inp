@@ -1,0 +1,81 @@
+CONTROL
+ARW2.SENSITIVITY
+1
+NodSet
+EleSet
+*
+STATICS
+skyline
+*
+QSTATICS
+mech 5.000000000000e-01 1.000000000000e-06 2000 0.000000000000e+00
+*
+AERO
+A6  
+Matcher "binaries/ARW2.match.fem"
+*
+RENUM
+rcm
+*
+SENSITIVITY
+method Direct
+tolsen 1.000000000000e-06
+relaxationsen 5.000000000000e-01
+readsensitivity "Sdesign/position.der"
+thgrli 1 2 3
+ksparam 50
+*
+GRAVITY
+ 0 0 -3.860880000000e+02
+*
+OUTPUT
+stressvm 20 15 "out/ARW2.stressvm" 2001 upper
+vmstshap 20 15 "out/ARW2.vmstshap" 1 upper
+vmstthic 20 15 "out/ARW2.vmstthic" 1 upper
+weigshap 20 15 "out/ARW2.weigshap" 1
+weigthic 20 15 "out/ARW2.weigthic" 1
+*
+INCLUDE "Sdesign/position.nodefile"
+*
+INCLUDE "AeroS-Files/topologyfile"
+*
+INCLUDE "AeroS-Files/cframefile"
+*
+INCLUDE "AeroS-Files/displacementfile"
+*
+INCLUDE "AeroS-Files/dimassfile"
+*
+INCLUDE "AeroS-Files/eframefile"
+*
+INCLUDE "AeroS-Files/compositefile"
+*
+INCLUDE "AeroS-Files/materialfile"
+*
+INCLUDE "AeroS-Files/attributefile"
+*
+GROUP
+A 129 1 
+A 130 1 
+A 131 2 
+A 132 2 
+A 133 2 
+A 135 2 
+A 140 2 
+A 141 2 
+A 142 2 
+A 143 2 
+A 144 2 
+A 153 1 
+A 154 1 
+A 155 1 
+A 156 1 
+A 159 1 
+A 160 1 
+A 161 1 
+A 162 1 
+A 191 1 
+A 157 3 
+A 158 3 
+A 163 3 
+A 255 3
+END

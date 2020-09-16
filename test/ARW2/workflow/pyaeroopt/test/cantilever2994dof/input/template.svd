@@ -1,0 +1,22 @@
+CONTROL
+"svd"
+1
+"nodeset"
+"elemset"
+*
+INCLUDE mesh/dynam
+*
+ROBC
+snapfi "output/modelI.statevct" "output/modelI.statevct" "output/modelI.statevct" "output/modelI.statevct" "output/modelI.statevct" "output/modelI.statevct" "output/modelI.statevct" "output/modelI.statevct" "output/modelI.statevct" "output/modelI.statevct"
+mnorma 1
+*
+OUTPUT
+robdataf "output/svd.robdataf" 0
+*
+INCLUDE mesh/top
+*
+INCLUDE mesh/mat_mass
+*
+INCLUDE input/template.idisp
+*
+END

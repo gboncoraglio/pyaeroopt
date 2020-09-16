@@ -1,0 +1,39 @@
+
+ ==============================
+ S N O P T  7.6.0    (Jan 2017)
+ ==============================
+ 
+ SNMEMB EXIT 100 -- finished successfully
+ SNMEMB INFO 104 -- memory requirements estimated
+
+ ==============================
+ S N O P T  7.6.0    (Jan 2017)
+ ==============================
+ 
+ 
+
+ Nonlinear constraints     463     Linear constraints       0
+ Nonlinear variables         6     Linear variables         0
+ Jacobian  variables         6     Objective variables      6
+ Total constraints         463     Total variables          6
+ 
+
+ 
+ 
+ SNOPTC EXIT  60 -- undefined user-supplied functions
+ SNOPTC INFO  61 -- undefined function at the first feasible point
+
+ Problem name                 A
+ No. of iterations                   0
+ Max x                       1 0.0E+00   Max pi                      1 0.0E+00
+ Max Primal infeas           0 0.0E+00   Max Dual infeas             0 0.0E+00
+ 
+ 
+
+ Solution printed on file  18
+ 
+ Time for MPS input                             0.00 seconds
+ Time for solving problem                       0.11 seconds
+ Time for solution output                       0.00 seconds
+ Time for constraint functions                  0.11 seconds
+ Time for objective function                    0.00 seconds

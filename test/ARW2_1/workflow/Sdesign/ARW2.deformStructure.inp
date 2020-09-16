@@ -1,0 +1,167 @@
+SDOUTPUT
+varmode    position    0    
+
+DEFINE
+# define a box surrounding the wing
+x1 = 220.0
+x2 = 320.0
+#
+z1 = 45.0
+z2 = 65.0
+#
+y1 = 7.0
+y2 = 43.0
+y3 = 81.0
+y4 = 125.0
+#
+# define convenient constants
+L = y4-y1
+L1 = y3-y1
+L2 = y2-y1
+#
+R1 = L1/L
+R2 = L2/L
+#
+chord = 0.5*(x2-x1)
+chord1 = 0.5*(x2-x1)*R1
+chord2 = 0.5*(x2-x1)*R2
+mchord = -0.5*(x2-x1)
+mchord1 = -0.5*(x2-x1)*R1
+mchord2 = -0.5*(x2-x1)*R2
+#
+B = 100
+B1 = 100*R1/2
+B2 = 100*R2/3
+B05 = 0.05*B
+B105 = 0.05*B1
+B205 = 0.05*B2
+
+NODES
+1     x1    y1    z1    
+2     x2    y1    z1    
+3     x2    y1    z2    
+4     x1    y1    z2    
+#
+5     x1    y2    z1    
+6     x2    y2    z1    
+7     x2    y2    z2    
+8     x1    y2    z2    
+#
+9     x1    y3    z1    
+10    x2    y3    z1    
+11    x2    y3    z2    
+12    x1    y3    z2    
+#
+13    x1    y4    z1    
+14    x2    y4    z1    
+15    x2    y4    z2    
+16    x1    y4    z2    
+
+EDGES
+# define the edges of the design volume
+1     linear    2    1  2    
+2     linear    2    2  3    
+3     linear    2    3  4    
+4     linear    2    4  1    
+#
+5     cubic     4    1  5  9  13    
+6     cubic     4    2  6  10 14    
+7     cubic     4    3  7  11 15    
+8     cubic     4    4  8  12 16    
+#
+9     linear    2    13 14    
+10    linear    2    14 15    
+11    linear    2    15 16    
+12    linear    2    16 13    
+
+PATCH
+# 2D patches enclosing the volume
+1    coons    quad4      0    0    1  2  3  4    
+2    coons    quad4      0    0    9  10 11 12    
+3    coons    quad8p4    0    0    5  4  8  12    
+4    coons    quad8p4    0    0    5  1  6  9    
+5    coons    quad8p4    0    0    6  2  7  10    
+6    coons    quad8p4    0    0    8  3  7  11    
+
+VOLUME
+# define a volume composed of the patches
+1    coons    brick8     1 1 1    1  2  3  4  5  6    
+
+DSGVAR
+# the x, y, z components of the control nodes that are design variables
+1     0 0 0
+2     0 0 0
+3     0 0 0
+4     0 0 0
+#
+5     3 0 6
+6     3 0 9
+7     3 0 9
+8     3 0 6
+#
+9     2 0 5
+10    2 0 8
+11    2 0 8
+12    2 0 5
+#
+13    1 0 4
+14    1 0 7
+15    1 0 7
+16    1 0 4
+
+ABSVAR
+# Define the abstract variables
+# SONE  : sweep
+# STWO  : twist
+# STHREE: dihedral
+1    -0.100000000006    1.0    -0.1     0.2    
+2    -0.100000000003    1.0    -0.1     0.1    
+3    0.0999999999981    1.0    -0.05    0.15    
+
+LINK
+# connect the abstract variables to the design variables
+1    SUM { DEF_OPR[1] = TAN { 1.0 * VAR[1] ^ 1.0 }
+          L * OPR[1]
+      }
+
+2    SUM { DEF_OPR[1] = TAN { 1.0 * VAR[1] ^ 1.0 }
+          L1 * OPR[1]
+      }
+
+3    SUM { DEF_OPR[1] = TAN { 1.0 * VAR[1] ^ 1.0 }
+          L2 * OPR[1]
+      }
+
+4    SUM { DEF_OPR[1] = TAN { 1.0 * VAR[2] ^ 1.0 }
+          chord * OPR[1] ^ 1.0 + 0.0
+          B * VAR[3] ^ 1.0 + B05
+      }
+
+5    SUM { DEF_OPR[1] = TAN { 1.0 * VAR[2] ^ 1.0 }
+          chord1 * OPR[1] ^ 1.0 + 0.0
+          B1 * VAR[3] ^ 1.0 + B105
+      }
+
+6    SUM { DEF_OPR[1] = TAN { 1.0 * VAR[2] ^ 1.0 }
+          chord2 * OPR[1] ^ 1.0 + 0.0
+          B2 * VAR[3] ^ 1.0 + B205
+      }
+
+7    SUM { DEF_OPR[1] = TAN { 1.0 * VAR[2] ^ 1.0 }
+          mchord * OPR[1] ^ 1.0 + 0.0
+          B * VAR[3] ^ 1.0 + B05
+      }
+
+8    SUM { DEF_OPR[1] = TAN { 1.0 * VAR[2] ^ 1.0 }
+          mchord1 * OPR[1] ^ 1.0 + 0.0
+          B1 * VAR[3] ^ 1.0 + B105
+      }
+
+9    SUM { DEF_OPR[1] = TAN { 1.0 * VAR[2] ^ 1.0 }
+          mchord2 * OPR[1] ^ 1.0 + 0.0
+          B2 * VAR[3] ^ 1.0 + B205
+      }
+
+FEMESH  "ARW2.fenodes"
+
+END

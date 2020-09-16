@@ -1,0 +1,13 @@
+**********************************************************************
+  METIS 4.0.1 Copyright 1998, Regents of the University of Minnesota
+
+Mesh Information ----------------------------------------------------
+  Name: ARW2.top.copy, #Elements: 240648, #Nodes: 43847, Etype: TET
+
+Partitioning Nodal Graph... -----------------------------------------
+  32-way Edge-Cut:   30010, Balance:  1.05
+
+Timing Information --------------------------------------------------
+  I/O:          		   0.400
+  Partitioning: 		   0.090
+**********************************************************************

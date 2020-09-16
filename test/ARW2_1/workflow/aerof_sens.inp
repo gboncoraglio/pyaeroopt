@@ -1,0 +1,144 @@
+under Problem {
+   Type = SteadyAeroelasticSensitivityAnalysis;
+   Mode = Dimensional;
+}
+
+under Input {
+   Prefix = "";
+   GeometryPrefix = "binaries/ARW2";
+   InitialWallDisplacement = "Fdata/fluidposition.idisp";
+   Matcher = "binaries/ARW2.match";
+}
+
+under Output {
+   under Postpro {
+      Prefix = "Fresults/";
+      LiftandDragSensitivity = "../out/ARW2.sensitivity.lift.drag";
+      Pressure = "ARW2.pressure";
+      Displacement = "ARW2.disp";
+      Frequency = 2000;
+   }
+   under Restart {
+      Prefix = "Fresults/Restart/";
+      Solution = "sol";
+      RestartData = "rst";
+      Frequency = 0;
+   }
+}
+
+under SensitivityAnalysis {
+   Method = Direct;
+   SensitivityComputation = Analytical;
+   SensitivityMesh = On;
+   SensitivityFSI = On;
+   AdaptiveEpsFSI = On;
+   SparseApproach = On;
+   under LinearSolver {
+      Type = Gmres;
+      MaxIts = 2000;
+      KrylovVectors = 2000;
+      Eps = 1e-07;
+      Output = "stdout";
+      under Preconditioner {
+         Type = Ras;
+         Fill = 0;
+      }
+   }
+}
+
+under Equations {
+   Type = Euler;
+   under FluidModel[0] {
+      Fluid = PerfectGas;
+   }
+   under ViscosityModel {
+      Type = Constant;
+      DynamicViscosity = 1e-05;
+   }
+}
+
+under ReferenceState {
+   Length = 1.0;
+   Mach = 0.8;
+   Reynolds = 1000.0;
+   Temperature = 273.15;
+}
+
+under BoundaryConditions {
+   under Inlet {
+      Mach = 0.8;
+      Alpha = 0.0;
+      Beta = 0.0;
+      Pressure = 12.7162;
+      Density = 1.0193e-07;
+   }
+   under Wall {
+      Type = Adiabatic;
+   }
+}
+
+under Space {
+   under NavierStokes {
+      Flux = Roe;
+      Reconstruction = Linear;
+      AdvectiveOperator = FiniteVolume;
+      Limiter = VanAlbada;
+      Gradient = LeastSquares;
+      Dissipation = SecondOrder;
+      Beta = 0.6666666666666;
+      Gamma = 1.0;
+   }
+}
+
+under Time {
+   Type = Implicit;
+   MaxIts = 10000;
+   Eps = 1e-12;
+   under Implicit {
+      Type = ThreePointBackwardDifference;
+      MatrixVectorProduct = Exact;
+      under Newton {
+         MaxIts = 100;
+         Eps = 0.001;
+         FailSafe = On;
+         under LinearSolver {
+            under NavierStokes {
+               Type = Gmres;
+               MaxIts = 100;
+               KrylovVectors = 100;
+               Eps = 0.001;
+               under Preconditioner {
+                  Type = Ras;
+                  Fill = 0;
+               }
+            }
+         }
+      }
+   }
+   under CflLaw {
+      Strategy = Hybrid;
+      Cfl0 = 1.0;
+      CflMax = 1000;
+   }
+}
+
+under MeshMotion {
+   Type = Basic;
+   Element = TorsionalSprings;
+   Mode = NonRecursive;
+   NumIncrements = 1;
+   under Newton {
+      MaxIts = 1;
+      Eps = 0.01;
+      under LinearSolver {
+         Type = Cg;
+         MaxIts = 5000;
+         KrylovVectors = 1000;
+         Eps = 1e-09;
+         under Preconditioner {
+            Type = Jacobi;
+            Fill = 0;
+         }
+      }
+   }
+}
