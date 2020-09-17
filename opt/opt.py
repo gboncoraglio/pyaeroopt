@@ -14,7 +14,7 @@ import scipy.optimize
 try:
   import pyOpt
 except ImportError as error:
-  print(error.__class__.__name__ + ":" + error.message)
+  print("***Warning: failure to import pyOpt")
 
 # import pyoptsparse   # removed until it can be integrated more smoothly
 # import openopt
@@ -670,7 +670,6 @@ class Optimize(object):
         for k in range(self.nvar):
             xStar[k] = optProb._solutions[j].getVar(k).value
 
-        pdb.set_trace()
         return xStar,objectivePyopt(xStar)[0]
 
     #TODO: test
