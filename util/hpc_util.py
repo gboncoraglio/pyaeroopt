@@ -54,7 +54,7 @@ def batch_slurm_pbs(name, hpc, exec_dir, bin, infile, log):
     +"#SBATCH --output={0:s}.output\n".format(name)\
     +"#SBATCH --error={0:s}.error\n".format(name)\
     +"#SBATCH --time=48:00:00\n"\
-    +"#SBATCH --nodes={0:d}\n".format(math.ceil(float(hpc.nproc)/hpc.ppn))\
+    +"#SBATCH --nodes={0:d}\n".format(int(math.ceil(float(hpc.nproc)/hpc.ppn)))\
     +"#SBATCH --ntasks-per-node={0:d}\n".format(hpc.ppn)\
     +partition
     +"cd $SLURM_SUBMIT_DIR\n"\
