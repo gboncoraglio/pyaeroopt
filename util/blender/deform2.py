@@ -4,7 +4,8 @@ import numpy as np
 #This is compatible with Aerof-2 which uses the abs displacement
 
 #This envs "py35blender" has mpi4py library installed
-sys.path.append('/home/users/jbho/codes/anaconda3/envs/py35blender/lib/python3.5/site-packages')
+sys.path.append('/home/gbonco/anaconda3/envs/conda-python-blender/lib/python3.5/site-packages')# for independence
+sys.path.append('/home/users/jbho/codes/anaconda3/envs/py35blender/lib/python3.5/site-packages')# for sherlock
 # MPI - if import fails, run in serial
 try:
     from mpi4py import MPI
