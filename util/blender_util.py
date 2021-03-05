@@ -1049,21 +1049,21 @@ def run_code(x, deform_obj, ptcloud, vmo, der=None, eps=1.0e-8, xpost=None,
     # Build execution string
     exec_str = blender_exec
     if mpiexec is not None and nproc > 1:
-        exec_str = "{0:s} -np {1:d} {2:s}".format(mpiexec, nproc, exec_str)
+        exec_str = "{0:s} -n {1:d} {2:s}".format(mpiexec, nproc, exec_str)
     if bg: exec_str+=' -b'
     # exec_str+=(' -P '+os.path.expandvars('$PYAEROOPT')+
     #                                          'pyaeroopt/util/blender/deform.py')
-    exec_str+=(' -P '+os.path.expandvars('$PYAEROOPT')+
+    exec_str+=(' -b -P '+os.path.expandvars('$PYAEROOPT')+
                                              'pyaeroopt/util/blender/deform2.py')
 
     # Call Blender and clean directory
-    # import sys
-    # print(exec_str)
-    # sys.exit()
-    # start_time = time.time()
-    # print(exec_str)
+    import sys
+    start_time = time.time()
+    print(exec_str)
+    sys.stdout.flush()
     execute_code(exec_str, log, make_call)
-    # print('blender time def: ',time.time() - start_time)
+    print('blender time def: ',time.time() - start_time)
+    sys.stdout.flush()
     clean_directory()
 
 def pickle_filename():

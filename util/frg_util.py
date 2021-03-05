@@ -518,6 +518,7 @@ def sower_fluid_merge(res_file, msh, con, out, name, from_bin=False, log=None,
     exec_str = "{0:s} -fluid -merge -con {1:s}".format(sower, con)
     exec_str = "{0:s} -mesh {1:s} -result {2:s}".format(exec_str, msh, res_file)
     exec_str = "{0:s} -name {1:s} -out {2:s}".format(exec_str, name, out)
+    exec_str = "{0:s} -precision 15".format(exec_str)
     if from_bin: exec_str = "{0:s} -binary".format(exec_str)
     execute_code(exec_str, log, make_call)
 

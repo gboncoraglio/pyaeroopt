@@ -29,10 +29,10 @@ def mpi_execute_str(bin, infile, nproc=1, mpi=None, bg=False, machinefile=None):
     if type(nproc)  is int: nproc  = [nproc]
 
     # Execution string
-    exec_str = "{0:s} -np {1:d} {2:s} {3:s}".format(mpi, nproc[0], bin[0],
+    exec_str = "{0:s} -n {1:d} {2:s} {3:s}".format(mpi, nproc[0], bin[0],
                                                    infile[0])
     if len(bin) == 2 and len(infile) == 2 and len(nproc) == 2:
-        exec_str = "{0:s} : -np {1:d} {2:s} {3:s}".format(exec_str, nproc[1],
+        exec_str = "{0:s} : -n {1:d} {2:s} {3:s}".format(exec_str, nproc[1],
                                                          bin[1], infile[1])
     if machinefile is not None:
         exec_str = "{0:s} -machinefile {1:s}".format(exec_str, machinefile)
