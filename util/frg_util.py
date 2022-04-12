@@ -343,7 +343,7 @@ def write_multsoln(fname, multsoln):
         f.write('{0:s}'.format(imultsoln))
     f.close()
 
-def flip_coord_top(fname_in, fname_out, swap=[0, 2, 1]):
+def flip_coord_top(fname_in, fname_out, swap=[0, 2, 1],scale = 1.0):
 
     f_in  = open(fname_in, 'r')
     f_out = open(fname_out, 'w')
@@ -356,11 +356,16 @@ def flip_coord_top(fname_in, fname_out, swap=[0, 2, 1]):
             continue
 
         if underNodes:
-            if swap == [0,1,2] or swap == [2,1,0] or swap ==  [1,0,2]: sign= 1.0
+            if swap == [0,1,2] or swap == [2,0,1] or swap ==  [1,2,0]: sign= 1.0
             else:                                                      sign=-1.0
 
-            coords = [x.rstrip('\n') for x in line.split('\t') if x]
-            f_out.write(coords[0]+' '+coords[swap[0]+1]+
+            coords = [x for x in line.rstrip('\n').split() if x]
+            if scale != 1.0:
+              f_out.write(coords[0]+' '+str(scale*float(coords[swap[0]+1]))+
+                                  ' '+str(scale*float(coords[swap[1]+1]))+
+                                  ' '+str(sign*scale*float(coords[swap[2]+1]))+'\n')
+            else:
+              f_out.write(coords[0]+' '+coords[swap[0]+1]+
                                   ' '+coords[swap[1]+1]+
                                   ' '+str(sign*float(coords[swap[2]+1]))+'\n')
         else:
@@ -373,9 +378,170 @@ def displace_top_with_vmo(fname, top, vmo, scale = 1.0, scale_disp = 1.0):
     disp           = read_vmo(vmo)
     nodes[-1][-1] += scale_disp * disp
     nodes[-1][-1] *= scale
-    # print(nodes)
-    # print(elems)
-    # print('DONE')
+    write_top(fname, nodes, elems)
+
+def join_tops(fname, top1, top2):#for joining two top files each with only one nodeset
+#keeps nodeset and elemsets separate
+    nodes1, elems1   = read_top(top1)#assumes it only has one nodeset
+    nodeoffset = np.max(nodes1[-1][2])
+    elemoffset = np.max(elems1[-1][3])
+    nodes2, elems2   = read_top(top2)#assumes it only has one nodeset
+    nodes2[-1][2] += nodeoffset
+    elems2[-1][3] += elemoffset
+    elems2[-1][-1] += nodeoffset #node numbering in the elements
+    nodes1[-1][2] = np.hstack((nodes1[-1][2],nodes2[-1][2])) #join nodesets together 
+    nodes1[-1][3] = np.vstack((nodes1[-1][3],nodes2[-1][3])) #join nodeset together
+    elems1[-1][1] += "_1"
+    elems2[-1][1] += "_2"
+    elems2[-1][2] = elems1[-1][2]
+    write_top(fname, nodes1, [elems1[-1], elems2[-1]])
+def join_derivs(fname, der1, der2):
+    t1, val1 = read_xpost(der1)
+    nnodes1, dim1, nder1 = val1.shape
+    t2, val2 = read_xpost(der2)
+    nnodes2, dim2, nder2 = val2.shape
+    if dim1 != dim2:
+      print("Dimensions of der1 and der2 do not match in join join_derivs")
+      exit()
+
+    dim = dim1
+    der = np.zeros((nnodes1 + nnodes2, dim, nder1 + nder2))
+    for i in range(nder1):
+      der[:nnodes1,:,i] = val1[:,:,i]
+    for i in range(nder2):
+      der[nnodes1:,:,nder1+i] = val2[:,:,i]
+    write_xpost(fname, "Attributes", range(nder1 + nder2), der, header = 'MODE')
+def concatenate_xposts(fname, xpost1, xpost2, concatenateTimes = True):#for concatenating multiple xposts for the same nodeset
+#keeps nodeset and elemsets separate
+    t1, val1 = read_xpost(xpost1)
+    nnodes1, dim1, n1 = val1.shape
+    t2, val2 = read_xpost(xpost2)
+    nnodes2, dim2, n2 = val2.shape
+    if nnodes1 != nnodes2 or dim1 != dim2:
+      print("Cannot concatenate two xposts with different number of nodes and/or dimensions")
+      exit()
+    if concatenateTimes:
+      t = np.concatenate((t1, t2 + t1[-1] + 1))
+    else:
+      t = np.concatenate((t1, t2))
+    write_xpost(fname, "Attributes", t, np.concatenate((val1,val2),axis=2), header = 'MODE')
+def rewrite_top(fname, top, elemmask):#rewrites nodeset with mask
+    nodes, elems = read_top(top)
+    mask = np.genfromtxt(elemmask)
+    elemsnew = [copy.copy(elems[0]), copy.copy(elems[0])]
+    for i in range(2):
+      elemsnew[i][1] += str(i)
+      for j in [3,4,5]:
+        elemsnew[i][j] = elems[0][j][mask==i]
+    write_top(fname, nodes, elemsnew)
+#from scipy.spatial.transform import Rotation as R
+def rotate_top_multiple_axes(fname, fname_derivs, top, axes, origin, thetas, scale = 1.0, top2 = None):
+    naxis = len(axes)
+    nodes, elems   = read_top(top)
+    nnodes, dim = nodes[-1][-1].shape
+    nextra = 0
+    if top2 is not None:
+      nodes2, elems2 = read_top(top2)
+      nextra = nodes2[-1][-1].shape[0]
+    der = np.zeros((nnodes + nextra, dim,naxis))
+    for i in range(naxis):
+      axis = axes[i] / np.sqrt(np.sum(np.power(axes[i],2)))
+      #rotation
+      K = np.array([[0, -axis[2], axis[1]],
+                  [axis[2], 0, -axis[0]],
+                  [-axis[1], axis[0], 0]])
+      t = np.radians(thetas[i])
+      R = np.eye(3) + np.sin(t)*K + (1 - np.cos(t))*np.matmul(K, K)
+      nodes[-1][-1] = np.matmul(nodes[-1][-1],R.transpose()) -  R.dot(origin) + origin
+      #for k in range(i):#rotate derivatives as well
+      #  der[:,:,k] = np.matmul(der[:,:,k],R.transpose()) -  R.dot(origin) + origin
+      for j in range(nnodes):
+        der[j,:,i] = np.cross(axis,nodes[-1][-1][j] - origin) / scale 
+      write_top(fname, nodes, elems)
+    write_xpost(fname_derivs, "Attributes", range(naxis), der, header='MODE')
+def rotate_top(fname, top, axis, origin, theta):
+    nodes, elems   = read_top(top)
+    axis = axis / np.sqrt(np.sum(np.power(axis,2)))
+    #rotation
+    K = np.array([[0, -axis[2], axis[1]],
+                  [axis[2], 0, -axis[0]],
+                  [-axis[1], axis[0], 0]])
+    t = np.radians(theta)
+    R = np.eye(3) + np.sin(t)*K + (1 - np.cos(t))*np.matmul(K, K)
+    nodes[-1][-1] = np.matmul(nodes[-1][-1],R.transpose()) -  R.dot(origin) + origin
+    write_top(fname, nodes, elems)
+def dihedral_deform(fname, top, s):
+    nodes, elems   = read_top(top)
+    nnodes = nodes[-1][-1].shape[0]
+    for i in range(nnodes):
+      absy = np.fabs(nodes[-1][-1][i][1])
+      if absy > 1.2:
+        nodes[-1][-1][i][2] += 0.001 * s * (absy - 1.2) ** 2
+    write_top(fname, nodes, elems)
+def rotate_derivs(fname, top, axis, origin, scale = 1.0, top2 = None):
+    #top2 is a second top file with which top is joined which means the xpost needs to be padded with zeros
+    nodes, elems = read_top(top)
+    axis = axis / np.sqrt(np.sum(np.power(axis,2)))
+    nnodes, dim = nodes[-1][-1].shape
+    nextra = 0
+    if top2 is not None:
+      nodes2, elems2 = read_top(top2)
+      nextra = nodes2[-1][-1].shape[0]
+    der = np.zeros((nnodes + nextra, dim))
+    for i in range(nnodes):
+      der[i] = np.cross(axis,nodes[-1][-1][i] - origin) / scale
+    write_xpost(fname, "Attributes", [0], der, header='MODE')
+def displace_top_along_axis(fname, top, axes,s):
+    #axes is some collection of displacement vectors
+    nodes, elems   = read_top(top)
+    displacement = s[0] * axes[0]
+    if len(s) > 1:
+      for i in range(1, len(s)):
+        displacement += s[i] * axes[i]
+    nodes[-1][-1] = nodes[-1][-1] + displacement
+    write_top(fname, nodes, elems)
+def displace_top_along_axis_derivs(fname, top, axes, top2 = None):
+    #top2 is a second top file with which top is joined which means the xpost needs to be padded with zeros
+    nodes, elems = read_top(top)
+    nnodes, dim = nodes[-1][-1].shape
+    nshapevar = len(axes)
+    nextra = 0
+    if top2 is not None:
+      nodes2, elems2 = read_top(top2)
+      nextra = nodes2[-1][-1].shape[0]
+    der = np.zeros((nnodes + nextra, dim, nshapevar))
+    for i in range(nshapevar):
+      der[0:nnodes,:,i] = axes[i]
+    write_xpost(fname, "Attributes", range(nshapevar), der, header='MODE')
+def pad_derivs(fname, deriv_xpost, top2):
+    #pads derivx_xpost with n zeros where n is the size of top2
+    t, val = read_xpost(deriv_xpost)
+    nnodes, dim, nders = val.shape
+    nodes2, elems2 = read_top(top2)
+    nextra = nodes2[-1][-1].shape[0]
+    der = np.zeros((nnodes + nextra, dim, nders))
+    for ider in range(nders):
+        der[:nnodes,:,ider] = val[:,:,ider]
+    write_xpost(fname, "Attributes", range(nders), der, header='MODE')
+def scale_top(fname, top, scale,offsety = False):
+    nodes, elems   = read_top(top)
+    if scale is not None:
+      nodes[-1][-1] *= scale
+    nnodes = nodes[-1][-1].shape[0]
+    if offsety:
+      for i in range(nnodes):
+        if nodes[-1][-1][i][1] < 0.001:
+          nodes[-1][-1][i][1] = -0.001
+    write_top(fname, nodes, elems)
+
+def scale_top_custom(fname, top, y0, ycut):
+    nodes, elems   = read_top(top)
+    nnodes = nodes[-1][-1].shape[0]
+    stretch = (ycut - y0) / (3.010 - y0)
+    for i in range(nnodes):
+      y = nodes[-1][-1][i][1]
+      if y < y0:
+        nodes[-1][-1][i][1] = stretch * (y - y0) + y0;
     write_top(fname, nodes, elems)
 
 def update_top_with_vmo(fname, top, vmo):

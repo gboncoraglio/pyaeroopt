@@ -5,7 +5,7 @@ import numpy as np
 
 #This envs "py35blender" has mpi4py library installed
 sys.path.append('/home/gbonco/anaconda3/envs/conda-python-blender/lib/python3.5/site-packages')# for independence
-sys.path.append('/home/users/jbho/codes/anaconda3/envs/py35blender/lib/python3.5/site-packages')# for sherlock
+sys.path.append('/oak/stanford/groups/cfarhat/jbho/codes/anaconda3/envs/conda-python-blender/lib/python3.5/site-packages')# for sherlock
 # MPI - if import fails, run in serial
 try:
     from mpi4py import MPI
@@ -19,6 +19,7 @@ try:
 except ImportError:
     parallel = False
     der_parallel = False 
+
 
 # pyAeroOpt modules
 from pyaeroopt.util.frg_util import write_vmo,write_vmo_abs, write_der
@@ -114,6 +115,7 @@ bObj.blender_add_deformee(ob)
 # Invoke deformation, extract deformation, and write to file
 # Extract displacement from blender object and write to VMO file
 t0 = time.time()
+print(x)
 disp = bObj.blender_deform(x)
 if not parallel or rank == 0: print('TIME FOR BLENDER LATTICE DEFORM = {0:e}'.format(time.time()-t0))
 sys.stdout.flush()

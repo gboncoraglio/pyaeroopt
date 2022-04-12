@@ -28,7 +28,7 @@ class Blender(CodeInterface):
         self.method    = 'Additive'
         #self.method    = 'Sequential'
         self.deformee  = []
-        self.eps       = 1.0e-4
+        self.eps       = 10.0**-2.5
 
         if self.method == 'Additive':
             print('')
@@ -47,6 +47,7 @@ class Blender(CodeInterface):
         p : ndarray
           Vector of Design Variables or Abstract Variables
         """
+        print("Blender.self.eps: {0:e}".format(self.eps))
         self.move_degrees_of_freedom(p)
         new_self = copy.deepcopy(self)
 

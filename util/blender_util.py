@@ -233,7 +233,7 @@ class Deform:
            Design Variable (returns scalar)
          """
 
-         # Ensure nodes iterable and dirs list of lists
+         # Ensure nodes iterable and dirs listG of lists
          if not hasattr(nodes,'__iter__'):
              raise ValueError('nodes argument must be iterable')
          if type(dirs) is not list:
@@ -309,7 +309,6 @@ class Deform:
         nabsvar : int
           Number of Abstract Variables
         """
-
         self.vtype = vtype
         if vtype == 'nodes':
             self.ndof = self.nodes.size
@@ -322,6 +321,8 @@ class Deform:
                 if len(item.expr) == 0:
                     raise ValueError('expr cannot be None for any Design '+
                                      'Variables if Abstract Variables declared')
+        elif vtype == 'rotvar':
+            self.ndof = 1
 
     def move_degrees_of_freedom(self, x):
         """
@@ -334,7 +335,7 @@ class Deform:
         """
 
         # Matrix to hold displacments of nodes
-        disp = np.zeros(self.nodes.shape,dtype=float)
+        disp = np.zeros(self.nodes.shape, dtype = float)
 
         for d, dof in enumerate(self.dofs.get_from_id()):
             # Extract value for degree of freedom
@@ -463,7 +464,17 @@ class Lattice(Deform):
 
         self.weight  = kwargs['weight'] if 'weight' in kwargs else 1.0
         self.interp  = kwargs['interp'] if 'interp' in kwargs else 'BSPLINE'
-
+        self.rotation_only = 'drot' in kwargs
+        if self.rotation_only:
+            drot = kwargs['drot']
+            u  = drot['vec'] / np.linalg.norm(drot['vec']) if 'vec' in drot else None
+            self.drot_origin = drot['origin'] if 'origin' in drot else None
+            if u is None or self.drot_origin is None:
+                print("drot must be specified as a dictionary containing vec and origin which are the axis of the rotation deformation and origin respecitvely")
+            self.drot_ux  = np.array([[0.0, -u[2], u[1]],
+                            [u[2], 0.0, -u[0]],
+                            [-u[1], u[0], 0.0]])
+            self.drot_uxu = np.outer(u, u)
         # Lattice points
         Lx = self.scale[0]; dx = Lx / (float(self.part[0]-1))
         Ly = self.scale[1]; dy = Ly / (float(self.part[1]-1))
@@ -515,7 +526,6 @@ class Lattice(Deform):
         # Compute displacement if deformed lattice requested
         nodes = copy.copy(self.nodes_rot)
         if deformed:
-            #print('in deformed')
             disp  =  self.deform(x, vtype)
             if self.rot is not None:
                 u  = self.rot['vec']
@@ -611,7 +621,9 @@ class Lattice(Deform):
         self.blend_objs.mesh_obj    = create_mesh_object('LATTICE', self.nodes)
 
         return ( latt )
-
+    def rotate(self, x):
+        R = np.cos(x)*np.identity(3) + np.sin(x)*self.drot_ux + (1.0-np.cos(x))*self.drot_uxu
+        return R.dot((self.nodes.T)).T - R.dot(self.drot_origin) + self.drot_origin
     def blender_deform(self, x, vtype, **kwargs):
         """
         Apply deformation to deformee from values of node displacement, dsgvar,
@@ -629,15 +641,23 @@ class Lattice(Deform):
         # Apply deformation to current Deform object (ensures self.disp has
         # appropriate values)
         rot = self.rot
-        disp = self.deform(x, vtype, **kwargs)
-
+        rotation_only = kwargs.pop('rotation_only') if 'rotation_only' in kwargs else False
         # Extract blender deform object and move nodes
-        obj     = self.blend_objs.deform_obj
         #objMesh = self.blend_objs.mesh_obj
-        for k, node in enumerate(self.nodes):
-            new_point_scaled_trans = self.nodes[k,:] + disp[k,:]
-            new_point = (new_point_scaled_trans - self.center)/self.scale
-            obj.data.points[k].co_deform = Vector(tuple(new_point))
+        obj     = self.blend_objs.deform_obj
+        if self.rotation_only:
+            print("doing rotation")
+            new_point_scaled_rot = self.rotate(np.radians(x[0])) #if rotation only lattice then x is length 1
+            for k, node in enumerate(self.nodes):
+                new_point = (new_point_scaled_rot[k,:] - self.center)/self.scale
+                obj.data.points[k].co_deform = Vector(tuple(new_point))
+        else:
+            disp = self.deform(x, vtype, **kwargs)  
+            for k, node in enumerate(self.nodes):
+                new_point_scaled_trans = self.nodes[k,:] + disp[k,:]
+                new_point = (new_point_scaled_trans - self.center)/self.scale
+                obj.data.points[k].co_deform = Vector(tuple(new_point))
+
 
     def blender_extract_deformation(self):
         """
@@ -1059,8 +1079,6 @@ def run_code(x, deform_obj, ptcloud, vmo, der=None, eps=1.0e-8, xpost=None,
     # Call Blender and clean directory
     import sys
     start_time = time.time()
-    print(exec_str)
-    sys.stdout.flush()
     execute_code(exec_str, log, make_call)
     print('blender time def: ',time.time() - start_time)
     sys.stdout.flush()
